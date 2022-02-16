@@ -44,34 +44,34 @@ public class DoiSoThanhChu {
         }
         switch (laySoChuc) {
             case 1:
-          result += "mười ";
+                result += "mười ";
                 break;
             case 2:
-          result += "hai mươi ";
+                result += "hai mươi ";
                 break;
             case 3:
-               result += "ba mươi ";
+                result += "ba mươi ";
                 break;
             case 4:
-           result += "bốn mươi ";
+                result += "bốn mươi ";
                 break;
             case 5:
-           result += "năm mươi ";
+                result += "năm mươi ";
                 break;
             case 6:
-               result += "sáu mươi ";
+                result += "sáu mươi ";
                 break;
             case 7:
-              result += "bảy mươi ";
+                result += "bảy mươi ";
                 break;
             case 8:
-         result += "tám mươi ";
+                result += "tám mươi ";
                 break;
             case 9:
-             result += "chín mươi ";
+                result += "chín mươi ";
                 break;
             default:
-            result += "";
+                result += "";
         }
         switch (layDonVi) {
             case 1:
