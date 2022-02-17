@@ -1,4 +1,4 @@
-package Introduction_to_java.bai_tap;
+package ss1_Introduction_to_java.bai_tap;
 
 import java.util.Scanner;
 
@@ -12,6 +12,9 @@ public class DoiSoThanhChu {
         int laySoChuc = (n % 100) / 10;
         int layDonVi = (n % 100) % 10;
         switch (laySotram) {
+            case 0:
+                result += "";
+                break;
             case 1:
                 result += "một trăm ";
                 break;
@@ -43,6 +46,12 @@ public class DoiSoThanhChu {
                 result += "";
         }
         switch (laySoChuc) {
+            case 0:
+                if(laySoChuc==0){
+                    result += "";
+                    break;
+                }
+
             case 1:
                 result += "mười ";
                 break;

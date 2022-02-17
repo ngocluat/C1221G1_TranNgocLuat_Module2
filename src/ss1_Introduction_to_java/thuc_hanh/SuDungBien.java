@@ -1,6 +1,4 @@
-package Introduction_to_java.thuc_hanh;
-
-import com.sun.org.apache.xpath.internal.objects.XString;
+package ss1_Introduction_to_java.thuc_hanh;
 
 public class SuDungBien {
     public static void main(String[] args) {
