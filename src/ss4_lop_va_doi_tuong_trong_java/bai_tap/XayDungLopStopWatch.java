@@ -3,9 +3,9 @@ package ss4_lop_va_doi_tuong_trong_java.bai_tap;
 import java.util.Date;
 
 public class XayDungLopStopWatch {
-    long starTime;
-    long endTime;
-    long end, star;
+    private long starTime;
+    private long endTime;
+    private long end, star;
 
     public long getStarTime() {
         return starTime;
@@ -14,6 +14,7 @@ public class XayDungLopStopWatch {
     public long getEndTime() {
         return endTime;
     }
+
     public XayDungLopStopWatch() {
 
     }

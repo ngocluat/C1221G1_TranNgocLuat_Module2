@@ -5,9 +5,9 @@ public class Fan {
     public static final int MIDIUM = 2;
     public static final int FAST = 3;
     int speed;
-    boolean on = false;
-    double radius;
-    String color = "blue";
+    private boolean on = false;
+    private double radius;
+    private String color = "blue";
 
     public Fan() {
     }

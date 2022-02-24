@@ -12,7 +12,6 @@ public class SoNguyenToNhoHon100 {
                 }
             }
             if (flag) {
-                System.out.println(" number Prime less 100");
                 System.out.print(i + " ");
             }
         }

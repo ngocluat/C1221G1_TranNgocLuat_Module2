@@ -1,15 +1,15 @@
 package ss6_ke_thua.bai_tap.LopCircleVaLopCylinder;
 
-public class Circlee {
+public class Circle {
     //bán kính, màu sắc
     int banKinh;
     String mauSat;
 
-    public Circlee() {
+    public Circle() {
 
     }
 
-    public Circlee(int banKinh, String mauSat) {
+    public Circle(int banKinh, String mauSat) {
         this.banKinh = banKinh;
         this.mauSat = mauSat;
     }

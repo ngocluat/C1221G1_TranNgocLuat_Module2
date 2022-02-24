@@ -1,6 +1,6 @@
 package ss6_ke_thua.bai_tap.LopCircleVaLopCylinder;
 
-public class Cylinder extends Circlee {
+public class Cylinder extends Circle {
     int chieuCao;
 
     public Cylinder() {

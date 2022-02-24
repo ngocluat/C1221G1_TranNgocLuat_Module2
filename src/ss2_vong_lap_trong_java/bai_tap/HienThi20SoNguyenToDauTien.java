@@ -15,6 +15,7 @@ public class HienThi20SoNguyenToDauTien {
             for (int j = 2; j < N; j++) {
                 if (N % j == 0) {
                     flag = false;
+                    break;
                 }
             }
             if (flag) {

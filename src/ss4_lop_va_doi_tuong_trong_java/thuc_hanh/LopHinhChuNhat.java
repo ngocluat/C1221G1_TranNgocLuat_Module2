@@ -11,9 +11,9 @@ public class LopHinhChuNhat {
         double height = scanner.nextDouble();
 
         Rectangle rectangle = new Rectangle(width, height);
-        System.out.println("Your Rectangle \n" + rectangle.display());
-        System.out.println("Perimeter of the Rectangle: " + rectangle.getPerimeter());
-        System.out.println("Area of the Rectangle: " + rectangle.getArea());
+        System.out.println("Your Square \n" + rectangle.display());
+        System.out.println("Perimeter of the Square: " + rectangle.getPerimeter());
+        System.out.println("Area of the Square: " + rectangle.getArea());
 
 
         System.out.println(" \n" +
@@ -47,7 +47,7 @@ class Rectangle {
     }
 
     public String display() {
-        return "Rectangle{" + "width=" + width + ", height=" + height + "}";
+        return "Square{" + "width=" + width + ", height=" + height + "}";
     }
 }
 

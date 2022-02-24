@@ -19,8 +19,8 @@ public class TestCylinder {
         System.out.println(cylinder);
 
 
-        Circlee[] arrCircle= {cylinder,cylinder1};
-        for (Circlee a : arrCircle) {
+        Circle[] arrCircle= {cylinder,cylinder1};
+        for (Circle a : arrCircle) {
         }
 
     }

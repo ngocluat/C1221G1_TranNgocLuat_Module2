@@ -1,7 +1,7 @@
-package ss6_ke_thua.thuc_hanh.HeCacDoiTuongHinhHoc;
+package ss7_abstract_class_interface.bai_tap.TrienKhaiInterfaceResizeableChoCacLopHinhHoc;
 
-public class Circle  extends Rectangle1 {
-    private double radius = 1.0;
+public class Circle extends Shape implements IResizeable {
+    private double radius = 100;
 
     public Circle() {
     }
@@ -22,7 +22,7 @@ public class Circle  extends Rectangle1 {
     public void setRadius(double radius) {
         this.radius = radius;
     }
-
+    @Override
     public double getArea() {
         return radius * radius * Math.PI;
     }
@@ -37,5 +37,10 @@ public class Circle  extends Rectangle1 {
                 + getRadius()
                 + ", which is a subclass of "
                 + super.toString();
+    }
+
+    @Override
+    public void resize(double percent) {
+        setRadius((getRadius() * percent / 100) + getRadius());
     }
 }

@@ -8,8 +8,7 @@ public class AbstractAndInterfaceTests {
         animals[0] = new Tiger();
         animals[1] = new Chicken();
         for (Animal animal : animals) {
-            animal.makeSound();
+            System.out.println(animal.makeSound());
         }
     }
-
 }

@@ -1,6 +1,6 @@
-package ss6_ke_thua.thuc_hanh.HeCacDoiTuongHinhHoc;
+package ss7_abstract_class_interface.bai_tap.TrienKhaiInterfaceColorableChoCacLopHinhHo;
 
-public class Rectangle extends Shape {
+public class Rectangle extends Shape implements IColorable {
     private double width = 1.0;
     private double length = 1.0;
 
@@ -50,5 +50,10 @@ public class Rectangle extends Shape {
                 + getLength()
                 + ", which is a subclass of "
                 + super.toString();
+    }
+
+    @Override
+    public void howToColor() {
+        setColor("tô màu tất cả 4 mặt");
     }
 }

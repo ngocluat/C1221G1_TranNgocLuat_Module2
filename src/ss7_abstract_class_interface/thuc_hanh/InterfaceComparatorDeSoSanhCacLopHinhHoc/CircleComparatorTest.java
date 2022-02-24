@@ -1,8 +1,10 @@
-package ss7_abstract_class_interface.thuc_hanh.TrienKhaiInterfaceComparator;
+package ss7_abstract_class_interface.thuc_hanh.InterfaceComparatorDeSoSanhCacLopHinhHoc;
+
 import ss6_ke_thua.thuc_hanh.HeCacDoiTuongHinhHoc.Circle;
 
 import java.util.Arrays;
 import java.util.Comparator;
+
 public class CircleComparatorTest {
     public static void main(String[] args) {
         Circle[] circles = new Circle[3];
@@ -23,6 +25,4 @@ public class CircleComparatorTest {
             System.out.println(circle);
         }
     }
-
-
 }

@@ -1,6 +1,6 @@
-package ss6_ke_thua.thuc_hanh.HeCacDoiTuongHinhHoc;
+package ss7_abstract_class_interface.bai_tap.TrienKhaiInterfaceResizeableChoCacLopHinhHoc;
 
-public class Shape {
+public abstract class Shape {
     private String color = "green";
     private boolean filled = true;
 
@@ -30,12 +30,12 @@ public class Shape {
 
     @Override
     public String toString() {
-        return "A Shape with color of "
+        return "A Rectangle1 with color of "
                 + getColor()
                 + " and "
                 + (isFilled() ? "filled" : "not filled");
     }
 
 
+    public abstract double getArea();
 }
-

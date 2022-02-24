@@ -1,6 +1,6 @@
-package ss6_ke_thua.thuc_hanh.HeCacDoiTuongHinhHoc;
+package ss7_abstract_class_interface.bai_tap.TrienKhaiInterfaceColorableChoCacLopHinhHo;
 
-public class Circle  extends Rectangle1 {
+public class Circle extends  Shape implements IColorable {
     private double radius = 1.0;
 
     public Circle() {
@@ -37,5 +37,10 @@ public class Circle  extends Rectangle1 {
                 + getRadius()
                 + ", which is a subclass of "
                 + super.toString();
+    }
+
+    @Override
+    public void howToColor() {
+        setColor(" tô màu tất cả 4 mặt");
     }
 }
