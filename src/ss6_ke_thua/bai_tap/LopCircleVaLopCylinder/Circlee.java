@@ -30,7 +30,7 @@ public class Circlee {
         this.mauSat = mauSat;
     }
 
-    public double dienTich(int banKinh) {
+    public double dienTich() {
         double dienTich = Math.pow(banKinh, 2) * 3.14;
         return dienTich;
     }

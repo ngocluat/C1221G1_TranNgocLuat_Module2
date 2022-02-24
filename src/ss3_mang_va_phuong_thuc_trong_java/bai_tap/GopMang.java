@@ -5,20 +5,20 @@ import java.util.Scanner;
 
 public class GopMang {
     public static void main(String[] args) {
-        int[] mang11 = mang1();
-        int[] mang22 = mang22();
-        int[] gopMang = new int[mang11.length + mang22.length];
-        for (int i = 0; i < mang11.length; i++) {
-            gopMang[i] = mang11[i];
+        int[] arr1 = array1();
+        int[] arr2 = array2();
+        int[] gopMang = new int[arr1.length + arr2.length];
+        for (int i = 0; i < arr1.length; i++) {
+            gopMang[i] = arr1[i];
         }
-        for (int i = 0; i < mang22.length; i++) {
-            gopMang[mang11.length + i] = mang22[i];
+        for (int i = 0; i < arr2.length; i++) {
+            gopMang[arr1.length + i] = arr2[i];
         }
         System.out.print("\n mảng sau khi gộp là");
         System.out.print("\n" + Arrays.toString(gopMang));
     }
 
-    public static int[] mang1() {
+    public static int[] array1() {
 
         int size;
         int[] array;
@@ -44,7 +44,7 @@ public class GopMang {
         return array;
     }
 
-    public static int[] mang22() {
+    public static int[] array2() {
 
         int[] array;
         Scanner scanner = new Scanner(System.in);

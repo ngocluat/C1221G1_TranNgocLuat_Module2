@@ -13,7 +13,7 @@ public class Cylinder extends Circlee {
     }
 
     public double theTich() {
-        return Math.PI * Math.pow(banKinh, 2) * chieuCao;
+        return super.dienTich() * chieuCao;
 
     }
 

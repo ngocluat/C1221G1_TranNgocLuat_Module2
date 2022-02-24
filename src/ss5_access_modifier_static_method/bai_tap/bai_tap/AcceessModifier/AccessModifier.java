@@ -29,7 +29,6 @@ class AccessModifier {
     }
 
     static double getArea() {
-        double banKinh = Math.pow(radius, 2) * 3.14;
-        return banKinh;
+        return Math.pow(radius, 2) * 3.14;
     }
 }

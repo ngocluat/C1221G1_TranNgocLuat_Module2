@@ -2,7 +2,7 @@ package ss4_lop_va_doi_tuong_trong_java.bai_tap;
 
 import java.util.Scanner;
 
-public class PhuongTrinhBatHai {
+public class PhuongTrinhBacHai {
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);

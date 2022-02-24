@@ -10,8 +10,7 @@ public class TestHinhTron {
         // khỏi tạo đối tượng
         AccessModifier accessModifier = new AccessModifier(banKinh);
         System.out.println(accessModifier.getArea() + " cm2");
-// dùng static thì không cần phải khỡi tạo đối towngj cũng được
+        // dùng static thì không cần phải khỡi tạo đối towngj cũng được
         System.out.println(AccessModifier.getArea());
-
     }
 }

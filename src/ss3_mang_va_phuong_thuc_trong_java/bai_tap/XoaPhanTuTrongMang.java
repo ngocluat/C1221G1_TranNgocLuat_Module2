@@ -14,16 +14,14 @@ public class XoaPhanTuTrongMang {
         for (int i = 0; i < arr.length; i++) {
             if (arr[i] == soMuonXoa) {
                 idex = i;
-                System.out.println("âja" + i);
-//                break;
+                break;
             }
-
         }
+
         if (idex != -1) {
             for (int i = idex; i < arr.length - 1; i++) {
                 arr[i] = arr[i + 1];
             }
-
             arr[arr.length - 1] = 0;
 
             System.out.println("deleted array is");

@@ -27,13 +27,10 @@ public class XayDungLopStopWatch {
         return end = new Date().getTime();
 
     }
-
     public long ketThuc() {
         return end - star;
 
     }
-
-
     public static void main(String[] args) {
         XayDungLopStopWatch xayDungLopStopWatch = new XayDungLopStopWatch();
         System.out.println(xayDungLopStopWatch.startTime());
@@ -42,7 +39,9 @@ public class XayDungLopStopWatch {
                 System.out.print("a");
             }
         }
+
         System.out.println("\n" + xayDungLopStopWatch.endTime());
-        System.out.println(xayDungLopStopWatch.ketThuc());
+        // từ giây * 10000==> miliGiaay
+        System.out.println(xayDungLopStopWatch.ketThuc() * 10000);
     }
 }
