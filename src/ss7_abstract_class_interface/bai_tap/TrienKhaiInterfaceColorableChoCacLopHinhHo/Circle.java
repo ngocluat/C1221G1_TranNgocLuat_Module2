@@ -41,6 +41,6 @@ public class Circle extends  Shape implements IColorable {
 
     @Override
     public void howToColor() {
-        setColor(" tô màu tất cả 4 mặt");
+        System.out.println(" tô màu xuung quanh");
     }
 }

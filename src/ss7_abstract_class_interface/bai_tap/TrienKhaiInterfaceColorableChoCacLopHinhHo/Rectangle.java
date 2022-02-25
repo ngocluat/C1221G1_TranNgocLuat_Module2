@@ -50,10 +50,12 @@ public class Rectangle extends Shape implements IColorable {
                 + getLength()
                 + ", which is a subclass of "
                 + super.toString();
+
     }
 
     @Override
     public void howToColor() {
-        setColor("tô màu tất cả 4 mặt");
+        System.out.println("tô màu tất cả 4 mặt");
     }
+
 }

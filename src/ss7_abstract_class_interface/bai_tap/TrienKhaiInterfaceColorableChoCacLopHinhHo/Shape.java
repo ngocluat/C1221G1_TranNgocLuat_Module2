@@ -1,6 +1,6 @@
 package ss7_abstract_class_interface.bai_tap.TrienKhaiInterfaceColorableChoCacLopHinhHo;
 
-public  abstract  class Shape implements IColorable {
+public  abstract class Shape implements IColorable {
     private String color = "green";
     private boolean filled = true;
 
@@ -35,8 +35,6 @@ public  abstract  class Shape implements IColorable {
                 + " and "
                 + (isFilled() ? "filled" : "not filled");
     }
+    public abstract double getArea();
 
-    @Override
-    public void howToColor() {
-    }
 }
