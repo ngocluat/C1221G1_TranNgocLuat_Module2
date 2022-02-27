@@ -1,12 +1,12 @@
 package bai_tap_lam_themOOP1.Bai1;
 
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class MenuVehicle {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         boolean flag = true;
+        System.out.println("nhập số lượng xe");
 
         Vehicle[] vehicle = new Vehicle[10];
 //        System.out.println(" xe trưng bày");
@@ -14,6 +14,8 @@ public class MenuVehicle {
 //        Vehicle vehicle2 = new Vehicle("linh", 15, 2100000, 180);
 //        System.out.println(vehicle1);
 //        System.out.println(vehicle2);
+        vehicle[0] = new Vehicle(" luật ", 19, 1200000, 110);
+        vehicle[1] = new Vehicle("linh", 15, 2100000, 180);
         do {
             System.out.println(" nhập lựa chon cauaru bạn\n" +
                     "1. tạo đối tương xe và nhập thông tin\n" +
@@ -32,22 +34,18 @@ public class MenuVehicle {
                     int giaTri = Integer.parseInt(scanner.nextLine());
                     System.out.println(" nhập dung tích xi lanh");
                     int dungTichXiLanh = Integer.parseInt(scanner.nextLine());
-                    int index = -1;
+                    int index = 0;
                     for (int i = 0; i < vehicle.length; i++) {
                         if (vehicle[i] == null) {
                             index = i;
                             break;
-
                         }
-
                     }
-                    vehicle[index] = new Vehicle(ten, tuoi, giaTri, dungTichXiLanh);
+                    vehicle[index -1] = new Vehicle(ten, tuoi, giaTri, dungTichXiLanh);
                     break;
                 case 2:
-                    System.out.println(Arrays.toString(vehicle));
-
                     for (Vehicle element : vehicle) {
-                        System.out.println(" tiền thuâ xe " + element);
+                        System.out.println(element);
                         element.tienThue();
                     }
                     break;
@@ -57,15 +55,6 @@ public class MenuVehicle {
             }
 
         }while (flag);
-
-
-
-
-
-
-
-
-
 
     }
 }

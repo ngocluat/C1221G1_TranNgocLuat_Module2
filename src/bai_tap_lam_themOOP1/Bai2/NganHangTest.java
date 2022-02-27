@@ -1,6 +1,5 @@
 package bai_tap_lam_themOOP1.Bai2;
 
-import java.util.Comparator;
 import java.util.Scanner;
 
 public class NganHangTest  {
@@ -21,10 +20,34 @@ public class NganHangTest  {
             System.out.println(elementSau);
         }
         System.out.println(" ri=út tiền");
-        System.out.println(" nhập số tiền bạn muốn rút ở ngân hàng ABC1 ");
-        double soTienRut = Integer.parseInt(scanner.nextLine());
-        nganHangABC1.rutTien(soTienRut);
-        System.out.println(nganHangABC1);
+
+        System.out.println("bạn muoons rút tienf ở ngân hangnf nào\n" +
+                "1. ngân hàng ABC 1 \n" +
+                "2 . ngân hàng ABC 2\n" +
+                "3 . ngân hàng ABC 3");
+        int nganHangMuonRut = Integer.parseInt(scanner.nextLine());
+        switch (nganHangMuonRut) {
+            case 1:
+                System.out.println(" nhập số tiền bạn muốn rút ở ngân hàng ABC1 ");
+                double soTienRut1 = Integer.parseInt(scanner.nextLine());
+                nganHangABC1.rutTien(soTienRut1);
+                System.out.println(nganHangABC1);
+                break;
+            case 2:
+                System.out.println(" nhập số tiền bạn muốn rút ở ngân hàng ABC2 ");
+                double soTienRut2 = Integer.parseInt(scanner.nextLine());
+                nganHangABC2.rutTien(soTienRut2);
+                System.out.println(nganHangABC2);
+                break;
+            case 3:
+                System.out.println(" nhập số tiền bạn muốn rút ở ngân hàng ABC3 ");
+                double soTienRut3 = Integer.parseInt(scanner.nextLine());
+                nganHangABC3.rutTien(soTienRut3);
+                System.out.println(nganHangABC3);
+                break;
+
+        }
+
 
         System.out.println(" đáo hạn");
         nganHangABC2.daoHan();

@@ -1,7 +1,7 @@
-package bai_tap_lam_themOOP1.Bai1;
-
-public class VehicleTest {
-    public static void main(String[] args) {
+//package bai_tap_lam_themOOP1.Bai1;
+//
+//public class VehicleTest {
+//    public static void main(String[] args) {
 //        Scanner scanner = new Scanner(System.in);
 //        int thongTinXe;
 //        boolean flag = true;
@@ -30,6 +30,6 @@ public class VehicleTest {
 //
 //
 //    
-    }
-
-}
+//    }
+//
+//}

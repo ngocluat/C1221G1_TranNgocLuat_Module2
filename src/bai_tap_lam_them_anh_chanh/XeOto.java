@@ -1,19 +1,19 @@
 package bai_tap_lam_them_anh_chanh;
 
-public class xeOto extends PhuongTien {
+public class XeOto extends PhuongTien {
     int soChoNgoi;
     String kieuXe;
 
-    public xeOto() {
+    public XeOto() {
 
     }
 
-    public xeOto(int soChoNgoi, String kieuXe) {
+    public XeOto(int soChoNgoi, String kieuXe) {
         this.soChoNgoi = soChoNgoi;
         this.kieuXe = kieuXe;
     }
 
-    public xeOto(String bienKiemSoat, String tenHangSanXuat, int namSanXuat, String chuSoHuu, int soChoNgoi, String kieuXe) {
+    public XeOto(String bienKiemSoat, String tenHangSanXuat, int namSanXuat, String chuSoHuu, int soChoNgoi, String kieuXe) {
         super(bienKiemSoat, tenHangSanXuat, namSanXuat, chuSoHuu);
         this.soChoNgoi = soChoNgoi;
         this.kieuXe = kieuXe;
@@ -21,7 +21,7 @@ public class xeOto extends PhuongTien {
 
     @Override
     public String toString() {
-        return "xeOto{" +
+        return "XeOto{" +
                 "soChoNgoi=" + soChoNgoi +
                 ", kieuXe='" + kieuXe + '\'' +
                 ", bienKiemSoat='" + bienKiemSoat + '\'' +
