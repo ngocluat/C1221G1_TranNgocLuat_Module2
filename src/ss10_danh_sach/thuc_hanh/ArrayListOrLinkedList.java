@@ -8,8 +8,10 @@ import java.util.ListIterator;
 public class ArrayListOrLinkedList {
     public static void main(String[] args) {
         List<String> arrayList = new ArrayList<>();
-        arrayList.add("New York"); arrayList.add("Atlanta");
-        arrayList.add("Dallas"); arrayList.add("Madison");
+        arrayList.add("New York");
+        arrayList.add("Atlanta");
+        arrayList.add("Dallas");
+        arrayList.add("Madison");
         System.out.println(arrayList);
 
 

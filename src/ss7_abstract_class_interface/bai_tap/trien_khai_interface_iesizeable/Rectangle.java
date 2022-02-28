@@ -1,6 +1,6 @@
-package ss7_abstract_class_interface.bai_tap.TrienKhaiInterfaceColorableChoCacLopHinhHo;
+package ss7_abstract_class_interface.bai_tap.trien_khai_interface_iesizeable;
 
-public class Rectangle extends Shape implements IColorable {
+public class Rectangle extends Shape implements IResizeable {
     private double width = 1.0;
     private double length = 1.0;
 
@@ -33,7 +33,7 @@ public class Rectangle extends Shape implements IColorable {
     public void setLength(double length) {
         this.length = length;
     }
-
+    @Override
     public double getArea() {
         return width * this.length;
     }
@@ -44,18 +44,18 @@ public class Rectangle extends Shape implements IColorable {
 
     @Override
     public String toString() {
-        return "A Rectangle with width="
+        return "A Square with width="
                 + getWidth()
                 + " and length="
                 + getLength()
                 + ", which is a subclass of "
                 + super.toString();
-
     }
 
     @Override
-    public void howToColor() {
-        System.out.println("tô màu tất cả 4 mặt");
-    }
+    public void resize(double percent) {
+        setLength((getLength() * percent / 100) + getLength());
 
+        setWidth((getWidth() * percent / 100) + getWidth());
+    }
 }

@@ -1,13 +1,15 @@
 package test_example.vi_du_nho.testcompalator;
 
-public class peson {
+import java.util.Comparator;
+
+public class Peson{
     String name ;
     int tuoi;
 
-    public peson() {
+    public Peson() {
     }
 
-    public peson(String name, int tuoi) {
+    public Peson(String name, int tuoi) {
         this.name = name;
         this.tuoi = tuoi;
     }
@@ -30,9 +32,10 @@ public class peson {
 
     @Override
     public String toString() {
-        return "peson{" +
+        return "Peson{" +
                 "name='" + name + '\'' +
                 ", tuoi=" + tuoi +
                 '}';
     }
+
 }

@@ -1,4 +1,4 @@
-package ss7_abstract_class_interface.bai_tap.TrienKhaiInterfaceColorableChoCacLopHinhHo;
+package ss7_abstract_class_interface.bai_tap.trien_khai_interface_colorable;
 
 public class Circle extends  Shape implements IColorable {
     private double radius = 1.0;

@@ -1,15 +1,26 @@
 package test_example.vi_du_nho.testcompalator;
 
-import java.util.Collections;
-import java.util.Comparator;
+import java.util.Arrays;
 
 public class TestPeson {
     public static void main(String[] args) {
-        peson peson = new peson(" luạt ", 21);
-        peson peson1 = new peson(" aluạt ", 19);
-        peson peson2 = new peson(" dluạt ", 119);
-        peson peson3 = new peson(" mluạt ", 1);
+        Peson peson = new Peson(" luạt ", 21);
+        Peson peson1 = new Peson(" dluạt ", 19);
+        Peson peson2 = new Peson(" aluạt ", 119);
+        Peson peson3 = new Peson(" mluạt ", 1);
+        Peson[] pesons = {peson, peson1, peson2, peson3};
+
+        exc exc1 = new exc();
+        Arrays.sort(pesons, exc1);
+        for (Peson s : pesons) {
+            System.out.println(s);
+        }
+
+        Vidu vidu = new Vidu();
+        Arrays.sort(pesons,vidu);
+        for (Peson a : pesons) {
+            System.out.println(a);
+        }
+
     }
-
-
 }

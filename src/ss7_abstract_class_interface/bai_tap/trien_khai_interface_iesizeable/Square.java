@@ -1,4 +1,4 @@
-package ss7_abstract_class_interface.bai_tap.TrienKhaiInterfaceResizeableChoCacLopHinhHoc;
+package ss7_abstract_class_interface.bai_tap.trien_khai_interface_iesizeable;
 
 public class Square extends Rectangle implements IResizeable {
     public Square() {
