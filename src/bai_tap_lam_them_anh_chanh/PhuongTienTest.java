@@ -92,6 +92,15 @@ public class PhuongTienTest {
                             break;
                         case 2:
                             // xe oo too
+                            for (int i = 0; i < xeOtos.length; i++) {
+                                if (xeOtos[i] != null) {
+                                    System.out.println(xeOtos[i]);
+                                } else {
+                                    break;
+                                }
+                            }
+
+                            break;
                         case 3:
 
                             for (int i = 0; i < xeMays.length; i++) {
@@ -107,6 +116,22 @@ public class PhuongTienTest {
                     break;
                 case 3:
                     // xóa
+                    System.out.println(" bạn muốn xóa loại xe nào \n" +
+                            "1. xe tải \n" +
+                            "2. xe ô tô\n" +
+                            "3. xe máy ");
+                    int xoaXe = Integer.parseInt(scanner.nextLine());
+                    switch (xoaXe) {
+                        case 1:
+                            // xóa xe tải
+                            break;
+                        case 2:
+                            // xóa xe ô to
+                            break;
+                        case 3:
+                            // xóa xe máy
+                            break;
+                    }
                     break;
                 case 4:
                     flag = false;

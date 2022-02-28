@@ -8,7 +8,7 @@ public class NganHangABC {
     double soTienTrongTaiKhoan;
     final double LAIXUAT = 0.035;
 
-
+Scanner scanner = new Scanner(System.in);
     public NganHangABC() {
 
     }
@@ -75,10 +75,11 @@ public class NganHangABC {
         setSoTienTrongTaiKhoan(getSoTienTrongTaiKhoan() + (getSoTienTrongTaiKhoan() * LAIXUAT));
     }
 
-    public void chuyenTien(double soTienMuonChuyen, NganHangABC tenNganhangNHan) {
-        Scanner scanner = new Scanner(System.in);
-        setSoTienTrongTaiKhoan( getSoTienTrongTaiKhoan() -soTienMuonChuyen );
-//        tenNganhangNHan + soTienMuonChuyen;
+    public void chuyenTien(NganHangABC nganHangABC) {
+        System.out.println(" nhập số tiền muốn chuyển ");
+        double soTienMuonChuyen = Double.parseDouble(scanner.nextLine());
+        System.out.println(" nhập ngân hàng nhận");
+        nganHangABC.setSoTienTrongTaiKhoan(nganHangABC.getSoTienTrongTaiKhoan()+soTienMuonChuyen);
 
     }
 

@@ -9,8 +9,6 @@ public class TestPeson {
         peson peson1 = new peson(" aluạt ", 19);
         peson peson2 = new peson(" dluạt ", 119);
         peson peson3 = new peson(" mluạt ", 1);
-
-
     }
 
 

@@ -2,7 +2,7 @@ package bai_tap_lam_themOOP1.Bai2;
 
 import java.util.Scanner;
 
-public class NganHangTest  {
+public class NganHangTest {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         NganHangABC nganHangABC1 = new NganHangABC(1234, " trần ngọc luật", 12000);
@@ -45,7 +45,6 @@ public class NganHangTest  {
                 nganHangABC3.rutTien(soTienRut3);
                 System.out.println(nganHangABC3);
                 break;
-
         }
 
 
@@ -54,24 +53,10 @@ public class NganHangTest  {
         System.out.println(nganHangABC2);
 
         System.out.println(" chuuyeenr tiền từ ngân hàng này sang ngaanhang khác ");
-//        nganHangABC2.chuyenTien(1000, nganHangABC1);
-//        System.out.println( nganHangABC1);
-
-
-
+        nganHangABC1.chuyenTien(nganHangABC2);
+        System.out.println(nganHangABC2);
 
     }
 
-//    @Override
-//    public int compare(Object o1, Object o2) {
-//        NganHangABC nganHangABC1 = (NganHangABC) o1;
-//        NganHangABC nganHangABC2 = (NganHangABC) o2;
-//        if (nganHangABC1.getSoTienTrongTaiKhoan() == nganHangABC2.getSoTienTrongTaiKhoan()) {
-//            return 0;
-//        } else if (nganHangABC1.getSoTienTrongTaiKhoan() > nganHangABC2.getSoTienTrongTaiKhoan()) {
-//            return 1;
-//        } else {
-//            return -1;
-//        }
-//    }
+
 }

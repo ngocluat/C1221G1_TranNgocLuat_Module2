@@ -15,7 +15,7 @@ public class MenuVehicle {
 //        System.out.println(vehicle1);
 //        System.out.println(vehicle2);
         vehicle[0] = new Vehicle(" luật ", 19, 1200000, 110);
-        vehicle[1] = new Vehicle("linh", 15, 2100000, 180);
+        vehicle[1] = new Vehicle("linh", 15, 210000, 180);
         do {
             System.out.println(" nhập lựa chon cauaru bạn\n" +
                     "1. tạo đối tương xe và nhập thông tin\n" +
@@ -35,13 +35,15 @@ public class MenuVehicle {
                     System.out.println(" nhập dung tích xi lanh");
                     int dungTichXiLanh = Integer.parseInt(scanner.nextLine());
                     int index = 0;
-                    for (int i = 0; i < vehicle.length; i++) {
-                        if (vehicle[i] == null) {
-                            index = i;
-                            break;
-                        }
-                    }
-                    vehicle[index -1] = new Vehicle(ten, tuoi, giaTri, dungTichXiLanh);
+                   for (int i = 0; i < vehicle.length; i++) {
+                       if (vehicle[i] == null) {
+                           index = i;
+                           break;
+                       }
+
+
+                   }
+                    vehicle[index] = new Vehicle(ten, tuoi, giaTri, dungTichXiLanh);
                     break;
                 case 2:
                     for (Vehicle element : vehicle) {
