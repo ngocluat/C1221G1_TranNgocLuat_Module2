@@ -1,10 +1,10 @@
 package bai_tap_lam_themOOP1.Bai1;
 
 public class Vehicle {
-    String ten;
-    int tuoi;
-    int giaTriXe;
-    int dungTichXiLanh;
+    private String ten;
+    private int tuoi;
+    private int giaTriXe;
+    private int dungTichXiLanh;
 
     public Vehicle() {
 

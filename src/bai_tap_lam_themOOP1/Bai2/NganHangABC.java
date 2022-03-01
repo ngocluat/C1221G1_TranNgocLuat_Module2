@@ -3,12 +3,13 @@ package bai_tap_lam_themOOP1.Bai2;
 import java.util.Scanner;
 
 public class NganHangABC {
-    long soTaiKhoan;
-    String tenTaiKhoan;
-    double soTienTrongTaiKhoan;
-    final double LAIXUAT = 0.035;
+    private long soTaiKhoan;
+    private String tenTaiKhoan;
+    private double soTienTrongTaiKhoan;
+    private final double LAIXUAT = 0.035;
 
-Scanner scanner = new Scanner(System.in);
+    Scanner scanner = new Scanner(System.in);
+
     public NganHangABC() {
 
     }

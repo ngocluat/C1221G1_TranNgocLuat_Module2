@@ -16,4 +16,10 @@ public class Method {
         System.out.println("nhập chủ sỡ hữu ");
         String chuSoHuu = scanner.nextLine();
     }
+//    public  void hienThi(PhuongTien phuongTien){
+//        for (int i = 0; i < phuongTien.s; i++) {
+//            System.out.println(phuongTien.get(i));
+//        }
+//    }
+
 }
