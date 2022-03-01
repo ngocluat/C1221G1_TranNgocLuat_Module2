@@ -1,4 +1,4 @@
-package ss7_abstract_class_interface.thuc_hanh.InterfaceComparatorDeSoSanhCacLopHinhHoc;
+package ss7_abstract_class_interface.thuc_hanh.interface_comparator;
 
 import ss6_ke_thua.thuc_hanh.HeCacDoiTuongHinhHoc.Circle;
 

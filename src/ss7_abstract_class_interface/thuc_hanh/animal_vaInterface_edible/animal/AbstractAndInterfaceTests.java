@@ -1,4 +1,4 @@
-package ss7_abstract_class_interface.thuc_hanh.AnimalVaInterfaceEdible.animal;
+package ss7_abstract_class_interface.thuc_hanh.animal_vaInterface_edible.animal;
 
 
 

@@ -1,4 +1,4 @@
-package ss7_abstract_class_interface.thuc_hanh.TrienKhaiInterfaceComparatorChoLopHinhHoc;
+package ss7_abstract_class_interface.thuc_hanh.trien_khaiInterface_comparator;
 import ss6_ke_thua.thuc_hanh.HeCacDoiTuongHinhHoc.Circle;
 
 import java.util.Arrays;
