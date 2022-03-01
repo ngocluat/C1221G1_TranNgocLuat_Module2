@@ -3,7 +3,7 @@ package bai_tap_lam_them_anh_chanh;
 public class XeTai extends PhuongTien {
     int trongTai;
 
-    public XeTai() {
+    public XeTai(){
 
     }
 
