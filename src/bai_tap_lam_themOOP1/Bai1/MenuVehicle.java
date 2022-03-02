@@ -9,11 +9,6 @@ public class MenuVehicle {
         System.out.println("nhập số lượng xe");
 
         Vehicle[] vehicle = new Vehicle[10];
-//        System.out.println(" xe trưng bày");
-//        Vehicle vehicle1 = new Vehicle(" luật ", 19, 1200000, 110);
-//        Vehicle vehicle2 = new Vehicle("linh", 15, 2100000, 180);
-//        System.out.println(vehicle1);
-//        System.out.println(vehicle2);
         vehicle[0] = new Vehicle(" luật ", 19, 1200000, 110);
         vehicle[1] = new Vehicle("linh", 15, 210000, 180);
         do {
@@ -40,15 +35,17 @@ public class MenuVehicle {
                            index = i;
                            break;
                        }
-
-
                    }
                     vehicle[index] = new Vehicle(ten, tuoi, giaTri, dungTichXiLanh);
                     break;
                 case 2:
                     for (Vehicle element : vehicle) {
-                        System.out.println(element);
-                        element.tienThue();
+                        if (element != null) {
+                            System.out.println(element);
+                            element.tienThue();
+                        } else {
+                            break;
+                        }
                     }
                     break;
                 case 3:
