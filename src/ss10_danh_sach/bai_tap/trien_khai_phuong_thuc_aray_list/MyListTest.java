@@ -1,5 +1,8 @@
 package ss10_danh_sach.bai_tap.trien_khai_phuong_thuc_aray_list;
 
+import java.util.HashSet;
+import java.util.Objects;
+
 public class MyListTest {
     public static class Dog{
         private String name;
@@ -18,29 +21,38 @@ public class MyListTest {
         public void talk(){
             System.out.println("Sủa sủa");
         }
+
+        @Override
+        public boolean equals(Object o) {
+          Dog dog = (Dog) o;
+
+           return dog.getName().equals(this.getName());
+
+        }
+
+        @Override
+        public int hashCode() {
+            return 1;
+        }
+
+        @Override
+        public String toString() {
+            return "Dog{" +
+                    "name='" + name + '\'' +
+                    '}';
+        }
     }
+
     public static void main(String[] args) {
         MyList<Dog> dogs = new MyList<>();
-        dogs.add(new Dog("Kitty"));
-        dogs.add(new Dog("Small"));
-        dogs.add(new Dog("Girl"));
+        HashSet<Dog> dogHashSet  =  new HashSet<>();
+        dogHashSet.add(new Dog("Kitty"));
+        dogHashSet.add(new Dog("Small"));
+        dogHashSet.add(new Dog("Kitty"));
 
-        dogs.get(1);
-
-        dogs.size();
-
-        dogs.remove(2);
-        dogs.indexOf(new Dog("Kitty"));
-
-        dogs.contains(new Dog("Small"));
-
-        dogs.add(3,new Dog("Sunny"));
-
-        for (int i = 0; i < dogs.size(); i++) {
-            if(dogs.get(i) != null){
-                System.out.println(dogs.get(i).getName());
-
-            }
+        for (Dog dog:dogHashSet
+             ) {
+            System.out.println(dog);
         }
     }
 }

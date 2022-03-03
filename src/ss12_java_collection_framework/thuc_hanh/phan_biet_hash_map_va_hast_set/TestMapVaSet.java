@@ -17,9 +17,6 @@ public class TestMapVaSet {
         for (Map.Entry<Integer, Student> student : studentMap.entrySet()) {
             System.out.println(student.toString());
         }
-//        Scanner scanner = new Scanner(System.in);
-//        int tim = Integer.parseInt(scanner.nextLine());
-
         System.out.println("...........Set");
 
         Set<Student> students = new HashSet<>();

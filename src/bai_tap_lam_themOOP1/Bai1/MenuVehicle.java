@@ -9,7 +9,7 @@ public class MenuVehicle {
         System.out.println("nhập số lượng xe");
 
         Vehicle[] vehicle = new Vehicle[10];
-        vehicle[0] = new Vehicle(" luật ", 19, 1200000, 110);
+        vehicle[0] = new Vehicle("luật ", 19, 1200000, 110);
         vehicle[1] = new Vehicle("linh", 15, 210000, 180);
         do {
             System.out.println(" nhập lựa chon cauaru bạn\n" +
