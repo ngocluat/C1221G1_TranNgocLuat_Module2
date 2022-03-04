@@ -1,6 +1,6 @@
 package case_study_module2.view;
 
-import case_study_module2.controlles.FuramaController;
+import case_study_module2.controllers.FuramaController;
 
 
 public class Test {

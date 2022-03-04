@@ -1,6 +1,6 @@
 package case_study_module2.model;
 
-public abstract class Facility {
+public  class Facility {
     private String tenDichVu;
     private double dienTichSuDung;
     private double chiPhiThue;

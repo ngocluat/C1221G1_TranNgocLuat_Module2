@@ -1,7 +1,7 @@
-package bai_tap_lam_them_anh_chanh.quang_ly_toan_bo_xe;
+package bai_tap_lam_them_anh_chanh.services;
 
 
-import bai_tap_lam_them_anh_chanh.XeTai;
+import bai_tap_lam_them_anh_chanh.model.XeTai;
 
 import java.util.ArrayList;
 import java.util.Scanner;

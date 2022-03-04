@@ -1,6 +1,6 @@
-package case_study_module2.sevices;
+package case_study_module2.services;
 
-public interface IContactService extends Service {
+public interface IContactService extends IService {
 
     void createNewContract();
 

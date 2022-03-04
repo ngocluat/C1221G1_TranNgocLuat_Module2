@@ -2,20 +2,19 @@ package ss12_java_collection_framework.bai_tap.luyen_tap_su_dung.quan_ly_sach;
 
 import ss12_java_collection_framework.bai_tap.luyen_tap_su_dung.Product;
 
-import java.util.ArrayList;
-
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 public class QuanLySach {
     static Scanner scanner = new Scanner(System.in);
-    static List<Product> products = new LinkedList<>();
+    static LinkedList<Product> products = new LinkedList<>();
 static {
-    products.add(new Product(100,9,"sách giáo khoa",100000));
-    products.add(new Product(3,199099,"sách bài tập ",190000));
-    products.add(new Product(6,199099,"từ điển",1002220));
-    products.add(new Product(99,199099," sách vật lý ",2000));
+    products.add(new Product(100,9,"a",100000));
+    products.add(new Product(3,199099,"eweb",190000));
+    products.add(new Product(6,199099,"earc",1002220));
+    products.add(new Product(99,199099,"fd",2000));
+    products.add(new Product(99,199099,"fzfd",2000));
+    products.add(new Product(99,199099,"fzd",2000));
+    products.add(new Product(99,199099,"d",2000));
 }
     public static void themSach() {
         System.out.println(" nhập số luoungj sách ");
@@ -50,10 +49,17 @@ static {
     public static void timKiemSach() {
         System.out.println("nhập tên sách ");
         String sachTimKiem = scanner.nextLine();
+
+      ArrayList<Product> productArrayList= new ArrayList<>();
+
         for (int i = 0; i < products.size(); i++) {
-            if (products.get(i).getTenSanPham().equals(sachTimKiem)) {
-                System.out.println(products.get(i));
+            if (products.get(i).getTenSanPham().contains(sachTimKiem)) {
+                productArrayList.add(products.get(i));
             }
+        }
+        for (Product product : productArrayList
+             ) {
+            System.out.println(product);
         }
     }
 
@@ -87,4 +93,9 @@ static {
         System.out.println(products);
     }
 
+    public static void sapXepTheoTen(){
+        System.out.println( " sắp xếp theo tên ");
+        Collections.sort(products,new SapXepTheoTen());
+        System.out.println(products);
+    }
 }

@@ -39,6 +39,7 @@ public class ProductManager {
                     break;
                 case 6:
                     QuanLySach.sapXep();
+                    QuanLySach.sapXepTheoTen();
                     break;
                 case  7 :
                     QuanLySach.hienThiTatCa();

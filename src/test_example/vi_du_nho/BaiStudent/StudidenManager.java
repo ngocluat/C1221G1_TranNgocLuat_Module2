@@ -1,36 +1,28 @@
 package test_example.vi_du_nho.BaiStudent;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class StudidenManager {
-    private static Student[] students = new Student[100];
+    private static List<Student> students = new ArrayList<>();
 
     static {
-        students[0] = new Student(1, "luật", " 1221G1", "C12");
-        students[1] = new Student(2, "loa", " 1221G1", "C12");
-        students[2] = new Student(3, "linh", " 1221G1", "C12");
+        students.add(new Student(1, "luật", " 1221G1", "C12"));
+        students.add(new Student(1, "luật", " 1221G1", "1"));
+        students.add(new Student(1, "111", " uaw", "C12"));
+
     }
 
     public static void showlistStudent() {
-        for (int i = 0; i < students.length; i++) {
-            if (students[i] != null) {
-                System.out.println(students[i].toString());
-            } else {
+        for (int i = 0; i < students.size(); i++) {
+            System.out.println(students.get(i));
 
-            }
+
         }
 
     }
 
-    public void add(int id, String name, String className, String school) {
-        int index = 0;
-        for (int i = 0; i < students.length; i++) {
-            if (students[i] == null) {
-                index = i;
-                System.out.println(students[index+1].toString());
-                break;
-            }
-        }
 
-    }
 
     public void edit() {
 

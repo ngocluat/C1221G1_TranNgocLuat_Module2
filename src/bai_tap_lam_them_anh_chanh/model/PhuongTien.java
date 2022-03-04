@@ -1,4 +1,4 @@
-package bai_tap_lam_them_anh_chanh;
+package bai_tap_lam_them_anh_chanh.model;
 
 public abstract class PhuongTien {
     String bienKiemSoat;

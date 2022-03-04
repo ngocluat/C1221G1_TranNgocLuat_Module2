@@ -36,7 +36,7 @@ public class testStudent {
 
                     System.out.println(" nhập truòng");
                     String school = sc.nextLine();
-                    studidenManager.add(id, name, className, school);
+//                    studidenManager.add(id, name, className, school);
                     break;
             }
         }

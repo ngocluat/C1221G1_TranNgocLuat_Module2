@@ -1,4 +1,6 @@
-package bai_tap_lam_them_anh_chanh;
+package bai_tap_lam_them_anh_chanh.model;
+
+import bai_tap_lam_them_anh_chanh.model.PhuongTien;
 
 public class XeMay extends PhuongTien {
     int congXuat;
