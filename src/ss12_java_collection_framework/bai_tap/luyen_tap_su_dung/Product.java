@@ -1,5 +1,7 @@
 package ss12_java_collection_framework.bai_tap.luyen_tap_su_dung;
 
+import java.util.Objects;
+
 public class Product {
 
     private int soLuong;
@@ -58,5 +60,19 @@ public class Product {
                 ", tenSanPham='" + tenSanPham + '\'' +
                 ", gia=" + gia +
                 "}\n";
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Product)) return false;
+        Product product = (Product) o;
+        return getiDSach() == product.getiDSach() &&
+                getTenSanPham().equals(product.getTenSanPham());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getiDSach(), getTenSanPham());
     }
 }
