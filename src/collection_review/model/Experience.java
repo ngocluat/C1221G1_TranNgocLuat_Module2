@@ -1,4 +1,4 @@
-package candidate_management.model;
+package collection_review.model;
 
 public class Experience extends Person {
   private   int yearOfExperience;

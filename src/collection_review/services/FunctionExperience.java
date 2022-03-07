@@ -1,6 +1,6 @@
-package candidate_management.services;
+package collection_review.services;
 
-import candidate_management.model.Experience;
+import collection_review.model.Experience;
 
 import java.util.ArrayList;
 import java.util.List;

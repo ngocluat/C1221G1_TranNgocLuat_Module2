@@ -1,4 +1,4 @@
-package candidate_management.model;
+package collection_review.model;
 
 public class Intern extends Person {
     //Majors University University name

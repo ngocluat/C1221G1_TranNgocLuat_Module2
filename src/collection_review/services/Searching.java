@@ -1,10 +1,5 @@
-package candidate_management.services;
+package collection_review.services;
 
-import candidate_management.model.Person;
-
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
 import java.util.Scanner;
 
 public class Searching {

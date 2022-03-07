@@ -1,8 +1,8 @@
-package candidate_management.controllers;
+package collection_review.controllers;
 
-import candidate_management.services.FunctionExperience;
-import candidate_management.services.FunctionFresher;
-import candidate_management.services.FunctionInternship;
+import collection_review.services.FunctionExperience;
+import collection_review.services.FunctionFresher;
+import collection_review.services.FunctionInternship;
 
 import java.util.Scanner;
 

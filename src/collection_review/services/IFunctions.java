@@ -1,4 +1,4 @@
-package candidate_management.services;
+package collection_review.services;
 
 public interface IFunctions {
     void Creating();

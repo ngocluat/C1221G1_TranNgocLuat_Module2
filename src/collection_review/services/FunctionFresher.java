@@ -1,6 +1,6 @@
-package candidate_management.services;
+package collection_review.services;
 
-import candidate_management.model.Fresher;
+import collection_review.model.Fresher;
 
 import java.util.ArrayList;
 import java.util.List;
