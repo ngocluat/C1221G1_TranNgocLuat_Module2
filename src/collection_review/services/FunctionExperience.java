@@ -16,7 +16,7 @@ public class FunctionExperience implements IFunctions {
     }
 
     @Override
-    public void Creating() {
+    public void creating() {
         boolean check = true;
         String chars = "Y";
         do {
@@ -51,7 +51,7 @@ public class FunctionExperience implements IFunctions {
 
 
     @Override
-    public void Updating() {
+    public void updating() {
         System.out.println(" enter id you want to Updating");
         int id = Integer.parseInt(scanner.nextLine());
         for (Experience exception : exceptions) {
@@ -126,7 +126,7 @@ public class FunctionExperience implements IFunctions {
     }
 
     @Override
-    public void Deleting() {
+    public void deleting() {
         System.out.println("select the id you want to delete");
         int idDelete = Integer.parseInt(scanner.nextLine());
         for (int i = 0; i < exceptions.size(); i++) {
@@ -138,7 +138,7 @@ public class FunctionExperience implements IFunctions {
     }
 
     @Override
-    public void Searching() {
+    public void searching() {
         System.out.println(" choose the name you want to find");
         String nameSeach = scanner.nextLine();
         ArrayList<Experience> experienceList = new ArrayList<>();

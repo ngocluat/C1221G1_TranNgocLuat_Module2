@@ -21,7 +21,7 @@ public class EmployeeServiceImpl implements IEmployeeService {
         System.out.println(" nhập tên nhân viên cần sửa ");
         String tenNhanVien = scanner.nextLine();
         for (int i = 0; i < nhanVien.size(); i++) {
-            if (nhanVien.get(i).getHoVaTen().equals(tenNhanVien)) {
+            if (nhanVien.get(i).getHoVaTen().equals(tenNhanVien)) {// nhập đúng tên khách hàng
                 System.out.println(" ngày sinh ");
                 String editBirthday = scanner.nextLine();
                 nhanVien.get(i).setNgaySinh(editBirthday);

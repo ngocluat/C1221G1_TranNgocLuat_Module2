@@ -19,7 +19,7 @@ public class FunctionFresher implements IFunctions {
     }
 
     @Override
-    public void Creating() {
+    public void creating() {
         boolean check = true;
         String chars = "Y";
         do {
@@ -54,7 +54,7 @@ public class FunctionFresher implements IFunctions {
     }
 
     @Override
-    public void Updating() {
+    public void updating() {
         System.out.println(" enter id you want to Updating");
         int id = Integer.parseInt(scanner.nextLine());
         for (Fresher exceptions : fresherList) {
@@ -123,7 +123,7 @@ public class FunctionFresher implements IFunctions {
     }
 
     @Override
-    public void Deleting() {
+    public void deleting() {
         System.out.println(" enter ID you want delete ");
         int iDDelete = Integer.parseInt(scanner.nextLine());
         for (int i = 0; i < fresherList.size(); i++) {
@@ -136,7 +136,7 @@ public class FunctionFresher implements IFunctions {
     }
 
     @Override
-    public void Searching() {
+    public void searching() {
         System.out.println(" choose the name you want to find");
         String nameSeach = scanner.nextLine();
         ArrayList<Fresher> list = new ArrayList<>();

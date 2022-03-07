@@ -1,11 +1,11 @@
 package collection_review.services;
 
 public interface IFunctions {
-    void Creating();
+    void creating();
 
-    void Updating();
+    void updating();
 
-    void Deleting();
+    void deleting();
 
-    void Searching();
+    void searching();
 }

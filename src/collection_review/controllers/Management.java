@@ -11,6 +11,9 @@ public class Management {
 
    public static void managementSystem() {
       boolean flag = true;
+      FunctionInternship functionInternship = new FunctionInternship();
+      FunctionFresher functionFresher = new FunctionFresher();
+      FunctionExperience functionExperience = new FunctionExperience();
       System.out.println("hello world");
       do {
          System.out.println("CANDIDATE MANAGEMENT SYSTEM\n" +
@@ -24,85 +27,83 @@ public class Management {
          switch (chose) {
             case 1:
                //Experience
-               FunctionExperience functionExperience = new FunctionExperience();
                System.out.println("1. creating Experience\n" +
                        "2. updating Experience\n" +
-                       "3. deleting Experience\n" +
-                       "4. searching Experience\n");
+                       "3. deleting Experience\n" );
                int choseExperience = Integer.parseInt(scanner.nextLine());
                switch (choseExperience) {
                   case 1:
-                     functionExperience.Creating();
+                     functionExperience.creating();
                      break;
                   case 2:
-                     functionExperience.Updating();
+                     functionExperience.updating();
                      functionExperience.hienThi();
                      break;
                   case 3:
                      functionExperience.hienThi();
-                     functionExperience.Deleting();
+                     functionExperience.deleting();
                      functionExperience.hienThi();
-                     break;
-                  case 4:
-                     functionExperience.Searching();
                      break;
                }
                break;
             case 2:
-               //Fresher
-               FunctionFresher functionFresher = new FunctionFresher();
                System.out.println(" 1. creating Fresher\n" +
                        " 2. updating Fresher\n" +
-                       " 3. deleting Fresher\n" +
-                       " 4. searching Fresher\n");
+                       " 3. deleting Fresher\n");
                int choseFresher = Integer.parseInt(scanner.nextLine());
                switch (choseFresher) {
                   case 1:
-                     functionFresher.Creating();
+                     functionFresher.creating();
                      break;
                   case 2:
-                     functionFresher.Updating();
+                     functionFresher.updating();
                      functionFresher.Display();
                      break;
                   case 3:
                      functionFresher.Display();
-                     functionFresher.Deleting();
+                     functionFresher.deleting();
                      functionFresher.Display();
                      break;
                   case 4:
-                     functionFresher.Searching();
+                     functionFresher.searching();
                      break;
 
                }
 
                break;
             case 3:
-               //Internship
-               FunctionInternship functionInternship = new FunctionInternship();
                System.out.println("1. creating Experience\n" +
                        " 2. updating Experience\n" +
-                       " 3. deleting Experience\n" +
-                       " 4. searching Experience\n");
+                       " 3. deleting Experience\n");
                int choseintern = Integer.parseInt(scanner.nextLine());
                switch (choseintern) {
                   case 1:
-                     functionInternship.Updating();
+                     functionInternship.creating();
                      break;
                   case 2:
-                    //functionInternship.Updating();
-                     // The system is under warranty
+                    functionInternship.updating();
                      break;
                   case 3:
-                     functionInternship.Deleting();
+                     functionInternship.deleting();
                      break;
-                  case 4:
-                     functionInternship.Searching();
-                     break;
-
                }
                break;
             case 4:
-               // searching all
+               System.out.println("1.searching Experience\n" +
+                       "2.searching Fresher\n" +
+                       "3.searching Experience");
+               int choseSearch= Integer.parseInt(scanner.nextLine());
+               switch (choseSearch){
+                  case 1 :
+                     functionExperience.searching();
+                     break;
+                  case 2 :
+                     functionFresher.searching();
+                     break;
+                  case 3 :
+                     functionInternship.searching();
+                     break;
+               }
                break;
             case 5:
                flag = false;

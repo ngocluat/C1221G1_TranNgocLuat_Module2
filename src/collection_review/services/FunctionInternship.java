@@ -19,7 +19,7 @@ public class FunctionInternship implements IFunctions {
     }
 
     @Override
-    public void Creating() {
+    public void creating() {
         boolean check = true;
         String chars = "Y";
         do {
@@ -54,13 +54,13 @@ public class FunctionInternship implements IFunctions {
     }
 
     @Override
-    public void Updating() {
+    public void updating() {
         // sửa
 
     }
 
     @Override
-    public void Deleting() {
+    public void deleting() {
         System.out.println("enter ID  you want to delete");
         int iDDelete = Integer.parseInt(scanner.nextLine());
         for (int i = 0; i < internList.size(); i++) {
@@ -76,7 +76,7 @@ public class FunctionInternship implements IFunctions {
 
 
     @Override
-    public void Searching() {
+    public void searching() {
         System.out.println(" enter first name  you want to Searching ");
         String firstNamesearch = scanner.nextLine();
         List<Intern> internList1 = new ArrayList<>();

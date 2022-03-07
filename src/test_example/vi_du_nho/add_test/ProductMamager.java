@@ -25,14 +25,7 @@ public class ProductMamager {
 
 
     public void add(Product product) {
-//        System.out.println(" nhập Id");
-//        int id = Integer.parseInt(scanner.nextLine());
-//        System.out.println(" nhập name");
-//        String name = scanner.nextLine();
-//        System.out.println(" nhập price ");
-//        int pricec = Integer.parseInt(scanner.nextLine());
-//        product= new Product(id,name,pricec);
-//        this.productMamagers.add(product);
+        productMamagers.add(product);
 
     }
 

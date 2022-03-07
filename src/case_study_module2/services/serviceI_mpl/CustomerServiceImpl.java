@@ -15,13 +15,12 @@ public class CustomerServiceImpl implements ICustomerService {
         khachHang.add(new Customer("trần Vân A", "22-2-2011", " nam", "234567", "abc@gmail.com", "23456", "thân thiết", "cẩm lệ"));
         khachHang.add(new Customer("trần bình B", "22-2-2222", " nữ", "5678", "mncv@gmail.com", "9876", "thân thiết", "liên chiểu"));
     }
-
     @Override
     public void edit() {
         System.out.println(" nhập tên khách hàng cần sửa");
         String tenKhachHang = scanner.nextLine();
         for (int i = 0; i < khachHang.size(); i++) {
-            if (khachHang.get(i).equals(tenKhachHang)) {
+            if (khachHang.get(i).getHoVaTen().equals(tenKhachHang)) {
                 System.out.println("sửa ngày sinh ");
                 String editBirthday = scanner.nextLine();
                 khachHang.get(i).setNgaySinh(editBirthday);
