@@ -21,27 +21,61 @@ public class CustomerServiceImpl implements ICustomerService {
         String tenKhachHang = scanner.nextLine();
         for (int i = 0; i < khachHang.size(); i++) {
             if (khachHang.get(i).getHoVaTen().equals(tenKhachHang)) {
-                System.out.println("sửa ngày sinh ");
-                String editBirthday = scanner.nextLine();
-                khachHang.get(i).setNgaySinh(editBirthday);
-                System.out.println(" sửa giới tính ");
-                String editGioiTinh = scanner.nextLine();
-                khachHang.get(i).setGioiTinh(editGioiTinh);
-                System.out.println("sửa số chứng minh nhân dân");
-                String editCMND = scanner.nextLine();
-                khachHang.get(i).setSoCMND(editCMND);
-                System.out.println(" sửa email");
-                String editMail = scanner.nextLine();
-                khachHang.get(i).seteMail(editMail);
-                System.out.println("sửa mã khách hàng");
-                String editmaKhachhang = scanner.nextLine();
-                khachHang.get(i).setDiaChi(editmaKhachhang);
-                System.out.println(" sửa loại khách hàng");
-                String editloaiKhachHang = scanner.nextLine();
-                khachHang.get(i).setLoaiKhachHang(editloaiKhachHang);
-                System.out.println(" sửa địa chỉ");
-                String editdiaChi = scanner.nextLine();
-                khachHang.get(i).setDiaChi(editdiaChi);
+                System.out.println(" 1. you want to fix it all?\n" +
+                        "2. edit by selection");
+                int choseEdit = Integer.parseInt(scanner.nextLine());
+                switch (choseEdit) {
+                    case 1:
+                        System.out.println("sửa ngày sinh ");
+                        String editBirthday = scanner.nextLine();
+                        khachHang.get(i).setNgaySinh(editBirthday);
+                        System.out.println(" sửa giới tính ");
+                        String editGioiTinh = scanner.nextLine();
+                        khachHang.get(i).setGioiTinh(editGioiTinh);
+                        System.out.println("sửa số chứng minh nhân dân");
+                        String editCMND = scanner.nextLine();
+                        khachHang.get(i).setSoCMND(editCMND);
+                        System.out.println(" sửa email");
+                        String editMail = scanner.nextLine();
+                        khachHang.get(i).seteMail(editMail);
+                        System.out.println("sửa mã khách hàng");
+                        String editmaKhachhang = scanner.nextLine();
+                        khachHang.get(i).setDiaChi(editmaKhachhang);
+                        System.out.println(" sửa loại khách hàng");
+                        String editloaiKhachHang = scanner.nextLine();
+                        khachHang.get(i).setLoaiKhachHang(editloaiKhachHang);
+                        System.out.println(" sửa địa chỉ");
+                        String editdiaChi = scanner.nextLine();
+                        khachHang.get(i).setDiaChi(editdiaChi);
+                        break;
+                    case 2:
+                        System.out.println("1.sửa ngày sinh\n" +
+                                "2.sửa loại khách hàng\n" +
+                                "3. sửa địa chỉ ");
+                        int choseSelection = Integer.parseInt(scanner.nextLine());
+                        switch (choseSelection) {
+                            case 1:
+                                System.out.println("sửa ngày sinh ");
+                                String editBirthdaySelect = scanner.nextLine();
+                                khachHang.get(i).setNgaySinh(editBirthdaySelect);
+                                break;
+                            case 2:
+                                System.out.println(" sửa loại khách hàng");
+                                String suaLoaiKhachHangselect = scanner.nextLine();
+                                khachHang.get(i).setLoaiKhachHang(suaLoaiKhachHangselect);
+                                break;
+                            case 3:
+                                System.out.println(" sửa địa chỉ");
+                                String suaDiaChiSelect = scanner.nextLine();
+                                khachHang.get(i).setDiaChi(suaDiaChiSelect);
+                                break;
+                        }
+
+                        break;
+
+
+                }
+
             }
         }
     }

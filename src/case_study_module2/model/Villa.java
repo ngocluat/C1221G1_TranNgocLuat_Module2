@@ -48,4 +48,5 @@ public class Villa extends Facility {
                 ", soTang=" + soTang +
                 '}';
     }
+
 }

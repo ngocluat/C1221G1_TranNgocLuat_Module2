@@ -1,5 +1,7 @@
 package case_study_module2.model;
 
+import java.util.Objects;
+
 public  class Facility {
     private String tenDichVu;
     private double dienTichSuDung;
@@ -66,5 +68,13 @@ public  class Facility {
                 ", chiPhiThue=" + chiPhiThue +
                 ", soLuongNguoiToiDa=" + soLuongNguoiToiDa +
                 ", kieuThue='" + kieuThue + '\'';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Facility)) return false;
+        Facility facility = (Facility) o;
+        return getTenDichVu().equals(facility.getTenDichVu());
     }
 }

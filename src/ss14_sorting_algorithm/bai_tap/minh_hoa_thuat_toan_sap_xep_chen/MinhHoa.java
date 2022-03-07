@@ -5,19 +5,22 @@ import java.util.Arrays;
 
 public class MinhHoa {
     public static void insertionSort(int[] array) {
-        int pos, x;
-        for (int i = 1; i < array.length; i++) {
-            x = array[i];
-            pos = i;
-            System.out.println(" vòng for thứ " + i + Arrays.toString(array));
-            while (pos > 0 && x < array[pos - 1]) {
-                array[pos] = array[pos - 1];
-                pos--;
-
+        System.out.println("                             array chưa được sắp xếp "+Arrays.toString(array));
+        for (int i = 0; i < array.length; i++) {
+         int inDexMin = i;
+            for (int j = i+1 ; j <array.length ; j++) {
+             if (array[j]<array[inDexMin]){
+                 inDexMin= j;
+             }
             }
-            array[pos] = x;
-            System.out.println(Arrays.toString(array));
+            if (inDexMin!= i){
+                int temp = array[i];
+                array[i]=array[inDexMin];
+                array[inDexMin]= temp;
+            }
+            System.out.println("lần thứ "+i+": "+Arrays.toString(array));
         }
+        System.out.println("                                     result"+ Arrays.toString(array));
     }
 
     public static void main(String[] args) {

@@ -22,7 +22,7 @@ public class FuramaController {
         do {
             System.out.println(" xin chào \n" +
                     "lựa chọn \n" +
-                    "1.\tEmployeeServiceImpl Management\n" +
+                    "1.\tEmployee Management\n" +
                     "2.\tCostumers Management\n" +
                     "3.\tFacility Management \n" +
                     "4.\tBooking Management\n" +
@@ -124,7 +124,7 @@ public class FuramaController {
                     System.out.println("xin mời lựa chọn\n" +
                             "1.\tAdd new booking\n" +
                             "2.\tDisplay list booking\n" +
-                            "3.\tCreate new constracts\n" +
+                            "3.\tCreate new constracts\n" +// tạo hợp dồng
                             "4.\tDisplay list contracts\n" +
                             "5.\tEdit contracts\n" +
                             "6.\tReturn main menu\n");
@@ -167,8 +167,6 @@ public class FuramaController {
 
             }
         } while (flag);
-
-
     }
 
 

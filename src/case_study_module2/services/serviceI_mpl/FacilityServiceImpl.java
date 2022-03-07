@@ -1,6 +1,5 @@
 package case_study_module2.services.serviceI_mpl;
 
-import case_study_module2.model.Facility;
 import case_study_module2.model.House;
 import case_study_module2.model.Room;
 import case_study_module2.model.Villa;
@@ -8,38 +7,45 @@ import case_study_module2.services.IFacilityService;
 import case_study_module2.services.Ifacility;
 
 import java.util.LinkedHashMap;
-import java.util.Map;
 import java.util.Scanner;
 
 
 public class FacilityServiceImpl implements IFacilityService, Ifacility {
 
-    static LinkedHashMap<Facility, Integer> facility = new LinkedHashMap<>();
+    static LinkedHashMap<String, Integer> villaLinked = new LinkedHashMap<>();
+    static LinkedHashMap<String, Integer> roomLinked = new LinkedHashMap<>();
+    static LinkedHashMap<String, Integer> houseLinked = new LinkedHashMap<>();
     static Scanner scanner = new Scanner(System.in);
+//    static Villa villa1 = new Villa(" alibaba ", 80.2, 505520, 9, "ngắn ", " tốt ", 214, 11);
+//    static Villa villa2 = new Villa(" edison ", 80.2, 100200, 10, " thuê dài lâu", " tốt ", 234, 10);
+//    static Room room1 = new Room("mana", 2420, 4562700, 10, "dài hạn", "At 1 month free ");
+//    static Room room2 = new Room("mana", 111, 99929, 20, "ngắn hạn", "At 5 day free ");
+//    static House house1 = new House("alibaba", 345, 45267, 9, "thuê dài hạn ", " tốt", 2);
+//    static House house2 = new House("alibaba", 222, 897987, 6, "thuê ngắn hạn ", " tốt", 2);
 
     static {
-        facility.put(new Villa(" alibaba ", 80.2, 505520, 9, "ngắn ", " tốt ", 214, 11), 0);
-        facility.put(new Villa(" edison ", 80.2, 100200, 10, " thuê dài lâu", " tốt ", 234, 10), 0);
-        facility.put(new Room("mana", 2420, 4562700, 10, "dài hạn", "At 1 month free "), 0);
-        facility.put(new Room("mana", 111, 99929, 20, "ngắn hạn", "At 5 day free "), 0);
-        facility.put(new House("alibaba", 345, 45267, 9, "thuê dài hạn ", " tốt", 2), 0);
-        facility.put(new House("alibaba", 222, 897987, 6, "thuê ngắn hạn ", " tốt", 2), 7);
+        Villa villa1 = new Villa(" alibaba ", 80.2, 505520, 9, "ngắn ", " tốt ", 214, 11);
+        Villa villa2 = new Villa(" edison ", 80.2, 100200, 10, " thuê dài lâu", " tốt ", 234, 10);
+        Room room1 = new Room("mana", 2420, 4562700, 10, "dài hạn", "At 1 month free ");
+        Room room2 = new Room("lana", 111, 99929, 20, "ngắn hạn", "At 5 day free ");
+        House house1 = new House("alibahai", 345, 45267, 9, "thuê dài hạn ", " tốt", 2);
+        House house2 = new House("alibaba", 222, 897987, 6, "thuê ngắn hạn ", " tốt", 2);
+        villaLinked.put(villa1.getTenDichVu(), 0);
+        villaLinked.put(villa2.getTenDichVu(), 0);
+        roomLinked.put(room1.getTenDichVu(), 0);
+        roomLinked.put(room2.getTenDichVu(), 0);
+        houseLinked.put(house1.getTenDichVu(), 0);
+        houseLinked.put(house2.getTenDichVu(), 0);
     }
 
     @Override
-
     public void displayListmaintenance() {
 
-        for (Map.Entry<Facility, Integer> entry : facility.entrySet()) {
-            if (entry.getValue() > 5) {
-                System.out.println(entry.getKey());
-            }
-        }
+
     }
 
     @Override
     public void add() {
-                  // trưng
     }
 
     public void addVilla() {
@@ -59,7 +65,8 @@ public class FacilityServiceImpl implements IFacilityService, Ifacility {
         double dienTichHoBoi = Double.parseDouble(scanner.nextLine());
         System.out.println(" số tầng");
         int soTang = Integer.parseInt(scanner.nextLine());
-        facility.put(new Villa(tenDichVu, dienTichSuDung, chiPhiThue, soNguoiToiDa, kieuThue, tieuChuanPhong, dienTichHoBoi, soTang), 0);
+        Villa villa = new Villa(tenDichVu, dienTichSuDung, chiPhiThue, soNguoiToiDa, kieuThue, tieuChuanPhong, dienTichHoBoi, soTang);
+        villaLinked.put(villa.getTenDichVu(), 0);
     }
 
     public void addRoom() {
@@ -76,7 +83,8 @@ public class FacilityServiceImpl implements IFacilityService, Ifacility {
         System.out.println(" tiêu dụ miễn phí đi kèm ");
         String free = scanner.nextLine();
 
-        facility.put(new Room(tenDichVu, dienTichSuDung, chiPhiThue, soNguoiToiDa, kieuThue, free), 0);
+        Room room = new Room(tenDichVu, dienTichSuDung, chiPhiThue, soNguoiToiDa, kieuThue, free);
+        roomLinked.put(room.getTenDichVu(), 0);
     }
 
     public void addHouse() {
@@ -95,14 +103,14 @@ public class FacilityServiceImpl implements IFacilityService, Ifacility {
         System.out.println(" nhập số tầng ");
         int soTang = Integer.parseInt(scanner.nextLine());
 
-        facility.put(new House(tenDichVu, dienTichSuDung, chiPhiThue, soNguoiToiDa, kieuThue, tieuChuanPhong, soTang), 0);
-
+        House house = new House(tenDichVu, dienTichSuDung, chiPhiThue, soNguoiToiDa, kieuThue, tieuChuanPhong, soTang);
+        houseLinked.put(house.getTenDichVu(), 0);
     }
 
     @Override
     public void display() {
-        for (Map.Entry<Facility, Integer> entry : facility.entrySet()) {
-            System.out.println(entry.getKey());
-        }
+        System.out.println(villaLinked.entrySet());
+        System.out.println(roomLinked.entrySet());
+        System.out.println(houseLinked.entrySet());
     }
 }
