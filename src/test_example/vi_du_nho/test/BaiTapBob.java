@@ -12,6 +12,6 @@ public class BaiTapBob {
         }catch (Exception ae) {
             System.out.println("Exception");
         }
-        System.out.println("finished");
+        System.err.println("finished");
     }
 }
