@@ -43,7 +43,7 @@ public class TestExercise {
     public static void docFile() {
         try {
             // Đọc file theo đường dẫn
-            File file = new File("src\\ss16_i_o_text_file\\bai_tap\\copy_file_text_assignment\\source file");
+            File file = new File("src\\ss16_i_o_text_file\\bai_tap\\copy_file_text_assignment\\sourcefile");
 
             // Kiểm tra nếu file không tồn tại thì ném ra ngoại lệ.
             if (!file.exists()) {
@@ -64,9 +64,9 @@ public class TestExercise {
     }
 
     public static void main(String[] args) {
-        TestExercise.writeStudentToCSV("src\\ss16_i_o_text_file\\bai_tap\\copy_file_text_assignment\\source file");
+        TestExercise.writeStudentToCSV("src\\ss16_i_o_text_file\\bai_tap\\copy_file_text_assignment\\sourcefile");
         TestExercise.docFile();
-        TestExercise.writeStudentToCSV("src\\ss16_i_o_text_file\\bai_tap\\copy_file_text_assignment\\target file");
+        TestExercise.writeStudentToCSV("src\\ss16_i_o_text_file\\bai_tap\\copy_file_text_assignment\\targetfile");
         TestExercise.docFile();
     }
 }

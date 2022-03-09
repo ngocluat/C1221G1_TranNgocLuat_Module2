@@ -3,9 +3,9 @@ package ss16_i_o_text_file.bai_tap.copy_file;
 import java.io.*;
 
 public class Test {
-    public static void docFile(String source) {
+    public static void docFile() {
         try {
-            File file = new File(source);
+            File file = new File("src\\ss16_i_o_text_file\\bai_tap\\copy_file\\sourcefile");
             FileReader fileReader = new FileReader(file);
             BufferedReader bufferedReader = new BufferedReader(fileReader);
             String line = "";
@@ -29,7 +29,7 @@ public class Test {
         try {
             fileWriter = new FileWriter(file, true);
             bufferedWriter = new BufferedWriter(fileWriter);
-
+            bufferedWriter.write(String.valueOf(new File("src\\ss16_i_o_text_file\\bai_tap\\copy_file\\sourcefile")));
             bufferedWriter.close();
             fileWriter.close();
         } catch (Exception e) {
@@ -38,8 +38,10 @@ public class Test {
     }
 
     public static void main(String[] args) {
-        Test.docFile("src\\ss16_i_o_text_file\\bai_tap\\copy_file\\source file");
-        Test.ghiFile("src\\ss16_i_o_text_file\\bai_tap\\copy_file\\target file");
+        Test.ghiFile("src\\ss16_i_o_text_file\\bai_tap\\copy_file\\sourcefile");
+        Test.docFile();
+        Test.ghiFile("src\\ss16_i_o_text_file\\bai_tap\\copy_file\\targetfile");
+        Test.docFile();
 
     }
 }
