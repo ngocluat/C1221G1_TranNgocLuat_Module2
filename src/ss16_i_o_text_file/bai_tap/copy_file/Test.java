@@ -18,8 +18,6 @@ public class Test {
         } catch (Exception e) {
             e.printStackTrace();
         }
-
-
     }
 
     public static void ghiFile(String path) {
@@ -30,6 +28,7 @@ public class Test {
             fileWriter = new FileWriter(file, true);
             bufferedWriter = new BufferedWriter(fileWriter);
             bufferedWriter.write(String.valueOf(new File("src\\ss16_i_o_text_file\\bai_tap\\copy_file\\sourcefile")));
+            bufferedWriter.newLine();
             bufferedWriter.close();
             fileWriter.close();
         } catch (Exception e) {
@@ -38,10 +37,9 @@ public class Test {
     }
 
     public static void main(String[] args) {
-        Test.ghiFile("src\\ss16_i_o_text_file\\bai_tap\\copy_file\\sourcefile");
+        Test.ghiFile("src\\ss16_i_o_text_file\\bai_tap\\copy_file\\sourcefile.txt");
         Test.docFile();
-        Test.ghiFile("src\\ss16_i_o_text_file\\bai_tap\\copy_file\\targetfile");
+        Test.ghiFile("src\\ss16_i_o_text_file\\bai_tap\\copy_file\\targetfile.txt");
         Test.docFile();
-
     }
 }

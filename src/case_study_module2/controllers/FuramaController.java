@@ -109,7 +109,6 @@ public class FuramaController {
                                     break;
                                 case 4:
                                     break;
-
                             }
                             break;
                         case 3:
