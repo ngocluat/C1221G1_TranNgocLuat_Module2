@@ -6,7 +6,7 @@ public class MenuVehicle {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         boolean flag = true;
-        System.out.println("nhập số lượng xe");
+
 
         Vehicle[] vehicle = new Vehicle[10];
         vehicle[0] = new Vehicle("luật ", 19, 1200000, 110);
