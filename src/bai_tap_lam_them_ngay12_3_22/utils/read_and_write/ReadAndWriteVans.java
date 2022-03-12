@@ -1,17 +1,17 @@
-package test_example.bai_tap_lam_thu.utils;
+package bai_tap_lam_them_ngay12_3_22.utils.read_and_write;
 
-import test_example.bai_tap_lam_thu.model.Product;
+import bai_tap_lam_them_ngay12_3_22.model.Vans;
 
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ReadAndWrite {
+public class ReadAndWriteVans {
 
-  final  static String NAME_FILE = "src\\test_example\\bai_tap_lam_thu\\data\\product.txt";
+    final static String NAME_FILE = "src\\bai_tap_lam_them_ngay12_3_22\\data\\vans.txt";
 
     // docj file
-    private static List<String> readListStringFromCSV(String pathFile) {
+    private static List<String> readListString(String pathFile) {
         List<String> stringList = new ArrayList<>();
         File file = new File(pathFile);
         FileReader fileReader = null;
@@ -34,18 +34,17 @@ public class ReadAndWrite {
     }
 
 
-    public static List<Product> readListFromCSV(){
-        List<Product> customerList = new ArrayList<>();
-        // sử dụng phương thức dùng chung trả về một list dạng String
-        List<String> stringList = readListStringFromCSV(NAME_FILE);
-        String[] arr =null;
-        // Chuyển đổi list String về list Customer
-        for (String string: stringList) {
-            arr= string.split(",");
-            Product products = new Product(Integer.parseInt(arr[0]),arr[1]);
-            customerList.add(products);
+    public static List<Vans> readList() {
+        List<Vans> vansList = new ArrayList<>();
+        List<String> stringList = readListString(NAME_FILE);
+        String[] arr = null;
+        for (String string : stringList) {
+            arr = string.split(",");
+            //String licensePlate, String producer, int yearOfManufacture, String owner, long tonnage) {
+            Vans vans = new Vans(arr[0], arr[1], Integer.parseInt(arr[2]), arr[3], Long.parseLong(arr[4]));
+            vansList.add(vans);
         }
-        return customerList;
+        return vansList;
     }
 
 
@@ -53,7 +52,7 @@ public class ReadAndWrite {
 
 
     //ghi file
-    private static void writeListStringToCSV(String filePath, List<String> stringList, boolean append) {
+    private static void writeListString(String filePath, List<String> stringList, boolean append) {
         File file = new File(filePath);
         FileWriter fileWriter = null;
         BufferedWriter bufferedWriter = null;
@@ -68,17 +67,16 @@ public class ReadAndWrite {
             fileWriter.close();
         } catch (IOException e) {
             e.printStackTrace();
+            ;
         }
     }
-    // ghi một list Customer cụ thể vào CSV
-    public static void writeListToCSV(List<Product> customerList, boolean append){
-    // chuyển đổi customerList => stringList;
+
+    public static void writeList(List<Vans> vansList, boolean append) {
         List<String> stringList = new ArrayList<>();
-        for (Product c: customerList) {
-            stringList.add(c.toStringProduct());
+        for (Vans c : vansList) {
+            stringList.add(c.toStringVans());
         }
-    // gọi phương thức dùng chung để ghi file
-        writeListStringToCSV(NAME_FILE,stringList,append);
+        writeListString(NAME_FILE, stringList, append);
     }
 
 }
