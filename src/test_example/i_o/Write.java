@@ -1,28 +1,14 @@
 package test_example.i_o;
 
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.util.Arrays;
+import java.util.Objects;
 
 public class Write {
-//    private static void writeStringListToCSV(List<String> stringList, String pathFile, Boolean append) {
-//
-//        File file = new File(pathFile);
-//        FileWriter fileWriter = null;
-//        BufferedWriter bufferedWriter = null;
-//        try {
-//            fileWriter = new FileWriter(file, append); // true ghi tiếp; false (mặc đinh): nghi đè
-//            bufferedWriter = new BufferedWriter(fileWriter);
-//            for (String s : stringList) {
-//                bufferedWriter.write(s);
-//                bufferedWriter.newLine();
-//            }
-//            bufferedWriter.close();
-//            fileWriter.close();
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
-//    }
+    public static void main(String[] args) {
+        String a = "23456789";
+        char[] b = a.toCharArray();
+        System.out.println(Arrays.toString(b));
+        System.out.println(   Objects.requireNonNull(b));
 
+    }
 }

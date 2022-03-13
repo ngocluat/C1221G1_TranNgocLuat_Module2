@@ -20,7 +20,6 @@ public class CountryMain {
             FileReader fileReader= new FileReader(file);
             BufferedReader br = new BufferedReader(fileReader);
             String line = "";
-
             while ((line = br.readLine()) != null) {
                 System.err.println(line);
             }

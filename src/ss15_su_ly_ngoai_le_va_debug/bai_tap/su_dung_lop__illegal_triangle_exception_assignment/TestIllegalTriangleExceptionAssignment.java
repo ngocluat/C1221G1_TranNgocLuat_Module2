@@ -14,7 +14,7 @@ public class TestIllegalTriangleExceptionAssignment {
         int canhC = Integer.parseInt(scanner.nextLine());
         try {
             checkTriangle(canhA, canhB, canhC);
-        } catch (Exception e) {
+        } catch (IllegalTriangleException e) {
             e.printStackTrace();
         } finally {
             System.out.println("kết thúc chương trình");
@@ -33,6 +33,4 @@ public class TestIllegalTriangleExceptionAssignment {
             throw new IllegalTriangleException("cạnh B + cạnh C không bằng cạnh A");
         }
     }
-
-
 }
