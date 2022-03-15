@@ -49,4 +49,11 @@ public class Villa extends Facility {
                 '}';
     }
 
+    //String tenDichVu, double dienTichSuDung, double chiPhiThue, int soLuongNguoiToiDa,
+    // String kieuThue, String tieuChuanPhong, double dienTichHoBoi, int soTang) {
+    public String toStringVilla() {
+        return this.getTenDichVu() + "," + this.getDienTichSuDung() + "," + this.getChiPhiThue() + "," + this.getSoLuongNguoiToiDa() + "," + this.getKieuThue() + "," + this.
+                getTieuChuanPhong() + "," + this.getDienTichHoBoi() + "," + this.getSoTang();
+    }
+
 }

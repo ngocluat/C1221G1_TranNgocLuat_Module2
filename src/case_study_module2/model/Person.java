@@ -68,4 +68,7 @@ public abstract class Person {
                 ", eMail='" + eMail + '\''
               ;
     }
+    public String toStringPeson(){
+        return  this.getHoVaTen()+","+ this.getNgaySinh()+","+ this.getGioiTinh()+","+this.soCMND+","+this.geteMail();
+    }
 }

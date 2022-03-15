@@ -48,4 +48,9 @@ public class Customer extends Person {
                 ", diaChi='" + diaChi + '\'' +
                 '}';
     }
+
+    @Override
+    public String toStringPeson() {
+        return super.toStringPeson() + "," + this.getMaKhachHang() + "," + this.getLoaiKhachHang() + "," + this.getDiaChi();
+    }
 }

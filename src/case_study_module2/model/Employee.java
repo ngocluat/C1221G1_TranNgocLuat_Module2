@@ -53,11 +53,16 @@ public class Employee extends Person {
     @Override
     public String toString() {
         return "EmployeeServiceImpl{" +
-                "maNhanVien='" + maNhanVien + '\'' +
                 super.toString()+
+                "maNhanVien='" + maNhanVien + '\'' +
                 ", trinhDo='" + trinhDo + '\'' +
                 ", viTri='" + viTri + '\'' +
                 ", luong=" + luong +
                 '}';
+    }
+
+    @Override
+    public String toStringPeson() {
+        return super.toStringPeson()+","+this.getMaNhanVien()+","+this.getTrinhDo()+","+this.getViTri()+","+this.getLuong();
     }
 }

@@ -2,32 +2,33 @@ package case_study_module2.services.serviceI_mpl;
 
 import case_study_module2.model.Employee;
 import case_study_module2.services.IEmployeeService;
+import case_study_module2.utils.read_and_write_file.ReadAndWriteEmployee;
 
-import java.util.LinkedList;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
 public class EmployeeServiceImpl implements IEmployeeService {
     static Scanner scanner = new Scanner(System.in);
-    static List<Employee> nhanVien = new LinkedList<>();
-
-    static {
-        nhanVien.add(new Employee("trần ngọc luật", "19-1-2001", "nam", "234567", "luatj1234@gmail.com", "00001", "tốt", "sếp ", 1888888L));
-        nhanVien.add(new Employee("trần ngọc minh", "01-1-2011", "nữ", "155423", "trav@gmail.com", "00002", "tốt", "nhân viên  ", 988888L));
-    }
 
     @Override
     public void edit() {
-        System.out.println(" nhập tên nhân viên cần sửa ");
-        String tenNhanVien = scanner.nextLine();
+        List<Employee> nhanVien = ReadAndWriteEmployee.readList();
+        System.out.println(" nhập tên mã nhân viên cần sửa ");
+        String maNhanVien = null;
+        try {
+            maNhanVien = scanner.nextLine();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
         for (int i = 0; i < nhanVien.size(); i++) {
-            if (nhanVien.get(i).getHoVaTen().equals(tenNhanVien)) {
+            if (nhanVien.get(i).getMaNhanVien().equals(maNhanVien)) {
                 System.out.println(" 1. you want to fix it all?\n" +
                         "2. edit by selection");
                 int choseEdit = Integer.parseInt(scanner.nextLine());
                 switch (choseEdit) {
-                    case 1 :
-
+                    case 1:
                         System.out.println(" ngày sinh ");
                         String editBirthday = scanner.nextLine();
                         nhanVien.get(i).setNgaySinh(editBirthday);
@@ -52,29 +53,40 @@ public class EmployeeServiceImpl implements IEmployeeService {
                         System.out.println(" lương");
                         long editLuong = Long.parseLong(scanner.nextLine());
                         nhanVien.get(i).setLuong(editLuong);
+                        ReadAndWriteEmployee.writeList(nhanVien, false);
                         break;
 
 
                     case 2 :
                         System.out.println("1.sửa ngày sinh\n" +
                                 "2.sửa loại trình dộ \n" +
-                                "3. sửa lương ");
+                                "3. sửa lương \n" +
+                                "4. sửa vị trí\n");
                         int choseSelection = Integer.parseInt(scanner.nextLine());
                         switch (choseSelection) {
                             case 1:
                                 System.out.println("sửa ngày sinh ");
                                 String editBirthdaySelect = scanner.nextLine();
                                 nhanVien.get(i).setNgaySinh(editBirthdaySelect);
+                                ReadAndWriteEmployee.writeList(nhanVien, false);
                                 break;
                             case 2:
                                 System.out.println(" sửa trình độ ");
                                 String edittrinhDoSelect = scanner.nextLine();
                                 nhanVien.get(i).setTrinhDo(edittrinhDoSelect);
+                                ReadAndWriteEmployee.writeList(nhanVien, false);
                                 break;
                             case 3:
                                 System.out.println(" lương");
                                 long editLuongSelect = Long.parseLong(scanner.nextLine());
                                 nhanVien.get(i).setLuong(editLuongSelect);
+                                ReadAndWriteEmployee.writeList(nhanVien, false);
+                                break;
+                            case 4:
+                                System.out.println("vị trí ");
+                                String editViTriSekect = scanner.nextLine();
+                                nhanVien.get(i).setViTri(editViTriSekect);
+                                ReadAndWriteEmployee.writeList(nhanVien, false);
                                 break;
                         }
                         break;
@@ -106,14 +118,19 @@ public class EmployeeServiceImpl implements IEmployeeService {
         String newViTri = scanner.nextLine();
         System.out.println("lương");
         long newLuong = Long.parseLong(scanner.nextLine());
-        nhanVien.add(new Employee(newName, newBirthday, newGioiTinh, newCMND, newMail, maNhanVien, trinhDo, newViTri, newLuong));
 
+        Employee employee = new Employee(newName, newBirthday, newGioiTinh, newCMND, newMail, maNhanVien, trinhDo, newViTri, newLuong);
+        List<Employee> employeeList = new ArrayList<>();
+        employeeList.add(employee);
+        ReadAndWriteEmployee.writeList(employeeList, true);
     }
 
     @Override
     public void display() {
-        for (int i = 0; i < nhanVien.size(); i++) {
-            System.out.println(nhanVien.get(i));
+        List<Employee> moToList = ReadAndWriteEmployee.readList();
+        for (int i = 0; i < moToList.size(); i++) {
+            System.out.println((1 + i) + "." + moToList.get(i));
         }
     }
+
 }

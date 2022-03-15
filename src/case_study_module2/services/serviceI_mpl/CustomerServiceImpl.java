@@ -2,6 +2,7 @@ package case_study_module2.services.serviceI_mpl;
 
 import case_study_module2.model.Customer;
 import case_study_module2.services.ICustomerService;
+import case_study_module2.utils.read_and_write_file.ReadAndWriteCostummer;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -11,14 +12,12 @@ public class CustomerServiceImpl implements ICustomerService {
     static List<Customer> khachHang = new LinkedList<>();
     static Scanner scanner = new Scanner(System.in);
 
-    static {
-        khachHang.add(new Customer("trần Vân A", "22-2-2011", " nam", "234567", "abc@gmail.com", "23456", "thân thiết", "cẩm lệ"));
-        khachHang.add(new Customer("trần bình B", "22-2-2222", " nữ", "5678", "mncv@gmail.com", "9876", "thân thiết", "liên chiểu"));
-    }
+
     @Override
     public void edit() {
         System.out.println(" nhập tên khách hàng cần sửa");
         String tenKhachHang = scanner.nextLine();
+        List<Customer> customerList = ReadAndWriteCostummer.readList();
         for (int i = 0; i < khachHang.size(); i++) {
             if (khachHang.get(i).getHoVaTen().equals(tenKhachHang)) {
                 System.out.println(" 1. you want to fix it all?\n" +
@@ -47,6 +46,7 @@ public class CustomerServiceImpl implements ICustomerService {
                         System.out.println(" sửa địa chỉ");
                         String editdiaChi = scanner.nextLine();
                         khachHang.get(i).setDiaChi(editdiaChi);
+                        ReadAndWriteCostummer.writeList(khachHang,false);
                         break;
                     case 2:
                         System.out.println("1.sửa ngày sinh\n" +
@@ -58,16 +58,19 @@ public class CustomerServiceImpl implements ICustomerService {
                                 System.out.println("sửa ngày sinh ");
                                 String editBirthdaySelect = scanner.nextLine();
                                 khachHang.get(i).setNgaySinh(editBirthdaySelect);
+                                ReadAndWriteCostummer.writeList(khachHang,false);
                                 break;
                             case 2:
                                 System.out.println(" sửa loại khách hàng");
                                 String suaLoaiKhachHangselect = scanner.nextLine();
                                 khachHang.get(i).setLoaiKhachHang(suaLoaiKhachHangselect);
+                                ReadAndWriteCostummer.writeList(khachHang,false);
                                 break;
                             case 3:
                                 System.out.println(" sửa địa chỉ");
                                 String suaDiaChiSelect = scanner.nextLine();
                                 khachHang.get(i).setDiaChi(suaDiaChiSelect);
+                                ReadAndWriteCostummer.writeList(khachHang,false);
                                 break;
                         }
 
@@ -88,8 +91,20 @@ public class CustomerServiceImpl implements ICustomerService {
         String newName = scanner.nextLine();
         System.out.println(" ngày sinh ");
         String newBirthday = scanner.nextLine();
-        System.out.println(" nhạp giới tính ");
-        String newGioiTinh = scanner.nextLine();
+        String newGioiTinh= null;
+
+        do {
+            System.err.println(" nhạp giới tính\n" +
+                    "  nam \n" +
+                    " nữ ");
+             newGioiTinh = scanner.nextLine();
+         if ("nam".equals(newGioiTinh)||"nu".equals(newGioiTinh)){
+             break;
+         }else {
+             System.out.println(" nhập sai nhập lại");
+         }
+        }while (true);
+
         System.out.println("số chứng minh nhân dân");
         String newCMND = scanner.nextLine();
         System.out.println(" nhập email");
@@ -100,12 +115,15 @@ public class CustomerServiceImpl implements ICustomerService {
         String loaiKhachHang = scanner.nextLine();
         System.out.println(" nhập địa chỉ");
         String diaChi = scanner.nextLine();
-        khachHang.add(new Customer(newName, newBirthday, newGioiTinh, newCMND, newMail, maKhachhang, loaiKhachHang, diaChi));
-
+        Customer customer = new Customer(newName, newBirthday, newGioiTinh, newCMND, newMail, maKhachhang, loaiKhachHang, diaChi);
+        List<Customer> customerList = ReadAndWriteCostummer.readList();
+        customerList.add(customer);
+        ReadAndWriteCostummer.writeList(customerList, true);
     }
 
     @Override
     public void display() {
+        List<Customer> khachHang = ReadAndWriteCostummer.readList();
         for (int i = 0; i < khachHang.size(); i++) {
             System.out.println(khachHang.get(i));
         }

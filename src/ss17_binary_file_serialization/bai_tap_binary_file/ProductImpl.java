@@ -3,7 +3,6 @@ package ss17_binary_file_serialization.bai_tap_binary_file;
 import java.util.ArrayList;
 import java.util.List;
 
-
 public class ProductImpl implements IServices {
     List<Product> productList = new ArrayList<>();
 
