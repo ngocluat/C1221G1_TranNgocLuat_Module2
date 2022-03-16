@@ -59,9 +59,9 @@ public class ReadAndWriteCostummer {
         }
     }
 
-    public static void writeList(List<Customer> employeeList, boolean append) {
+    public static void writeList(List<Customer> customerList, boolean append) {
         List<String> stringList = new ArrayList<>();
-        for (Customer c : employeeList) {
+        for (Customer c : customerList) {
             stringList.add(c.toStringPeson());
         }
         writeListString(NAME_FILE, stringList, append);

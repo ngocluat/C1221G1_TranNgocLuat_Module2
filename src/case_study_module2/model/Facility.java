@@ -1,23 +1,35 @@
 package case_study_module2.model;
 
+
 import java.util.Objects;
 
 public  class Facility {
+    String maDichVu;
     private String tenDichVu;
     private double dienTichSuDung;
     private double chiPhiThue;
     private int soLuongNguoiToiDa;
     private String kieuThue;
 
+
     public Facility() {
     }
 
-    public Facility(String tenDichVu, double dienTichSuDung, double chiPhiThue, int soLuongNguoiToiDa, String kieuThue) {
+    public Facility(String maDichVu,String tenDichVu, double dienTichSuDung, double chiPhiThue, int soLuongNguoiToiDa, String kieuThue) {
         this.tenDichVu = tenDichVu;
         this.dienTichSuDung = dienTichSuDung;
         this.chiPhiThue = chiPhiThue;
         this.soLuongNguoiToiDa = soLuongNguoiToiDa;
         this.kieuThue = kieuThue;
+        this.maDichVu= maDichVu;
+    }
+
+    public String getMaDichVu() {
+        return maDichVu;
+    }
+
+    public void setMaDichVu(String maDichVu) {
+        this.maDichVu = maDichVu;
     }
 
     public String getTenDichVu() {
@@ -63,18 +75,19 @@ public  class Facility {
     @Override
     public String toString() {
         return "Facility{" +
-                "tenDichVu='" + tenDichVu + '\'' +
+                "maDichVu='" + maDichVu + '\'' +
+                ", tenDichVu='" + tenDichVu + '\'' +
                 ", dienTichSuDung=" + dienTichSuDung +
                 ", chiPhiThue=" + chiPhiThue +
                 ", soLuongNguoiToiDa=" + soLuongNguoiToiDa +
-                ", kieuThue='" + kieuThue + '\'';
+                ", kieuThue='" + kieuThue + '\'' +
+                '}';
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof Facility)) return false;
-        Facility facility = (Facility) o;
-        return getTenDichVu().equals(facility.getTenDichVu());
+    public String toStringFacility() {
+
+        return this.getMaDichVu()+ "," +this.getTenDichVu() + "," + this.getDienTichSuDung() + "," + this.getChiPhiThue() + "," + this.getSoLuongNguoiToiDa() + "," + this.getKieuThue();
+
     }
+
 }

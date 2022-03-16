@@ -3,6 +3,7 @@ package case_study_module2.services.serviceI_mpl;
 import case_study_module2.model.Customer;
 import case_study_module2.services.ICustomerService;
 import case_study_module2.utils.read_and_write_file.ReadAndWriteCostummer;
+import case_study_module2.utils.read_and_write_file.regular_expression.CheckInputName;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -12,12 +13,14 @@ public class CustomerServiceImpl implements ICustomerService {
     static List<Customer> khachHang = new LinkedList<>();
     static Scanner scanner = new Scanner(System.in);
 
+    static {
+        khachHang = ReadAndWriteCostummer.readList();
+    }
 
     @Override
     public void edit() {
         System.out.println(" nhập tên khách hàng cần sửa");
         String tenKhachHang = scanner.nextLine();
-        List<Customer> customerList = ReadAndWriteCostummer.readList();
         for (int i = 0; i < khachHang.size(); i++) {
             if (khachHang.get(i).getHoVaTen().equals(tenKhachHang)) {
                 System.out.println(" 1. you want to fix it all?\n" +
@@ -73,10 +76,7 @@ public class CustomerServiceImpl implements ICustomerService {
                                 ReadAndWriteCostummer.writeList(khachHang,false);
                                 break;
                         }
-
                         break;
-
-
                 }
 
             }
@@ -87,23 +87,27 @@ public class CustomerServiceImpl implements ICustomerService {
     @Override
     public void add() {
         System.out.println("thêm mới khách hàng");
-        System.out.println(" nhập họ tên ");
-        String newName = scanner.nextLine();
+        String newName = null;
+        do {
+            System.out.println(" nhập họ tên ");
+            newName = scanner.nextLine();
+        } while (!CheckInputName.regexName(newName));
+
         System.out.println(" ngày sinh ");
         String newBirthday = scanner.nextLine();
-        String newGioiTinh= null;
+        String newGioiTinh = null;
 
         do {
             System.err.println(" nhạp giới tính\n" +
                     "  nam \n" +
                     " nữ ");
-             newGioiTinh = scanner.nextLine();
-         if ("nam".equals(newGioiTinh)||"nu".equals(newGioiTinh)){
-             break;
-         }else {
-             System.out.println(" nhập sai nhập lại");
-         }
-        }while (true);
+            newGioiTinh = scanner.nextLine();
+            if ("nam".equals(newGioiTinh) || "nu".equals(newGioiTinh)) {
+                break;
+            } else {
+                System.out.println(" nhập sai nhập lại");
+            }
+        } while (true);
 
         System.out.println("số chứng minh nhân dân");
         String newCMND = scanner.nextLine();
@@ -111,21 +115,57 @@ public class CustomerServiceImpl implements ICustomerService {
         String newMail = scanner.nextLine();
         System.out.println(" mã khách hàng");
         String maKhachhang = scanner.nextLine();
-        System.out.println(" nhập loại khách hàng");
-        String loaiKhachHang = scanner.nextLine();
+
+        String loaiKhachHang = null;
+        boolean flag = false;
+        do {
+            System.out.println(" nhập loại khách hàng\n: 1.Diamond\n 2.Platinium\n 3.Gold,\n 4.Silver,\n 5.Member");
+            int customerType = Integer.parseInt(scanner.nextLine());
+            switch (customerType) {
+                case 1:
+                    loaiKhachHang = "Diamond";
+                    flag = false;
+                    break;
+                case 2:
+                    loaiKhachHang = "Platinium";
+                    flag = false;
+                    break;
+                case 3:
+                    loaiKhachHang = "Gold";
+                    flag = false;
+                    break;
+                case 4:
+                    loaiKhachHang = "Silver";
+                    flag = false;
+                    break;
+                case 5:
+                    loaiKhachHang = "Member";
+                    flag = false;
+                    break;
+                default:
+                    flag = true;
+
+            }
+        } while (flag);
+
         System.out.println(" nhập địa chỉ");
         String diaChi = scanner.nextLine();
+
         Customer customer = new Customer(newName, newBirthday, newGioiTinh, newCMND, newMail, maKhachhang, loaiKhachHang, diaChi);
-        List<Customer> customerList = ReadAndWriteCostummer.readList();
-        customerList.add(customer);
-        ReadAndWriteCostummer.writeList(customerList, true);
+        addCustmer(customer);
+        ReadAndWriteCostummer.writeList(khachHang, false);
     }
 
     @Override
     public void display() {
-        List<Customer> khachHang = ReadAndWriteCostummer.readList();
-        for (int i = 0; i < khachHang.size(); i++) {
-            System.out.println(khachHang.get(i));
+        for (Customer customer : khachHang) {
+            System.out.println(customer);
         }
     }
+
+    public void addCustmer(Customer customer) {
+        khachHang.add(customer);
+    }
+
+
 }

@@ -9,8 +9,8 @@ public class House extends Facility {
     public House() {
     }
 
-    public House(String tenDichVu, double dienTichSuDung, double chiPhiThue, int soLuongNguoiToiDa, String kieuThue, String tieuChuanPhong, int soTang) {
-        super(tenDichVu, dienTichSuDung, chiPhiThue, soLuongNguoiToiDa, kieuThue);
+    public House(String maDichVu,String tenDichVu, double dienTichSuDung, double chiPhiThue, int soLuongNguoiToiDa, String kieuThue, String tieuChuanPhong, int soTang) {
+        super(maDichVu,tenDichVu, dienTichSuDung, chiPhiThue, soLuongNguoiToiDa, kieuThue);
         this.tieuChuanPhong = tieuChuanPhong;
         this.soTang = soTang;
     }
@@ -33,10 +33,19 @@ public class House extends Facility {
 
     @Override
     public String toString() {
-        return "House{" + super.toString() +
+        return "House{" +
+                super.toString() +
                 "tieuChuanPhong='" + tieuChuanPhong + '\'' +
                 ", soTang=" + soTang +
                 '}';
     }
+
+
+    @Override
+    public String toStringFacility() {
+        return super.toStringFacility()+ "," + this.getTieuChuanPhong() + "," + this.getSoTang();
+    }
+
+
 
 }

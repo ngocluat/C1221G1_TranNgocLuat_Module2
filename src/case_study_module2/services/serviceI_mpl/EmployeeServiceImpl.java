@@ -3,6 +3,7 @@ package case_study_module2.services.serviceI_mpl;
 import case_study_module2.model.Employee;
 import case_study_module2.services.IEmployeeService;
 import case_study_module2.utils.read_and_write_file.ReadAndWriteEmployee;
+import case_study_module2.utils.read_and_write_file.regular_expression.CheckInputName;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -77,13 +78,13 @@ public class EmployeeServiceImpl implements IEmployeeService {
                                 ReadAndWriteEmployee.writeList(nhanVien, false);
                                 break;
                             case 3:
-                                System.out.println(" lương");
+                                System.out.println("  sửa lương");
                                 long editLuongSelect = Long.parseLong(scanner.nextLine());
                                 nhanVien.get(i).setLuong(editLuongSelect);
                                 ReadAndWriteEmployee.writeList(nhanVien, false);
                                 break;
                             case 4:
-                                System.out.println("vị trí ");
+                                System.out.println(" sửa vị trí ");
                                 String editViTriSekect = scanner.nextLine();
                                 nhanVien.get(i).setViTri(editViTriSekect);
                                 ReadAndWriteEmployee.writeList(nhanVien, false);
@@ -99,31 +100,95 @@ public class EmployeeServiceImpl implements IEmployeeService {
 
     @Override
     public void add() {
+        String newName = null;
         System.out.println("thêm mới ");
-        System.out.println(" nhập họ tên ");
-        String newName = scanner.nextLine();
+        do {
+            System.out.println(" nhập họ tên ");
+            newName = scanner.nextLine();
+        } while (!CheckInputName.regexName(newName));
+
         System.out.println(" ngày sinh ");
         String newBirthday = scanner.nextLine();
-        System.out.println(" nhạp giới tính ");
-        String newGioiTinh = scanner.nextLine();
+        String newGioiTinh = null;
+
+        do {
+            System.err.println(" nhạp giới tính\n" +
+                    "  nam \n" +
+                    " nữ ");
+            newGioiTinh = scanner.nextLine();
+            if ("nam".equals(newGioiTinh) || "nu".equals(newGioiTinh)) {
+                break;
+            } else {
+                System.out.println(" nhập sai nhập lại");
+            }
+        } while (true);
         System.out.println("số chứng minh nhân dân");
         String newCMND = scanner.nextLine();
         System.out.println(" nhập email");
         String newMail = scanner.nextLine();
         System.out.println(" mã nhân viên");
         String maNhanVien = scanner.nextLine();
-        System.out.println("trình độ ");
-        String trinhDo = scanner.nextLine();
-        System.out.println("vị trí ");
-        String newViTri = scanner.nextLine();
-        System.out.println("lương");
-        long newLuong = Long.parseLong(scanner.nextLine());
+        String trinhDo = null;
+        do {
+            System.out.println("trình độ\n trung cap,\n cao đang,\n dai hoc \n sau dai hoc");
+            trinhDo = scanner.nextLine();
+            if (trinhDo.equals("trung cap") || trinhDo.equals("cao dang") || trinhDo.equals("dai hoc") || trinhDo.equals("sau dai hoc")) {
+                break;
+            } else {
+                System.err.println("yêu cầu nhập đúng trình độ ");
+            }
 
+        } while (true);
+        String newViTri = null;
+        boolean flag = false;
+        do {
+            System.out.println("vị trí của khách hàng :\n 1.Lễ tân\n 2.phục vụ\n 3.chuyên viên\n 4.giám sát\n 5.quản lý\n 6.giám đốc ");
+            int chosePosition = Integer.parseInt(scanner.nextLine());
+            switch (chosePosition) {
+                case 1:
+                    newViTri = "Lễ Tân";
+                    flag = false;
+                    break;
+                case 2:
+                    newViTri = "Phục Vụ";
+                    flag = false;
+                    break;
+                case 3:
+                    newViTri = "Chuyên Viên";
+                    flag = false;
+                    break;
+                case 4:
+                    newViTri = "Giám Sát";
+                    flag = false;
+                    break;
+                case 5:
+                    newViTri = "Quản Lý ";
+                    flag = false;
+                    break;
+                case 6:
+                    newViTri = "GIÁM ĐỐC";
+                    flag = false;
+                    break;
+                default:
+                    flag = true;
+            }
+
+        } while (flag);
+
+
+        long newLuong = 6000000;// basic salary
+        try {
+            System.out.println("lương");
+            newLuong = Long.parseLong(scanner.nextLine());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         Employee employee = new Employee(newName, newBirthday, newGioiTinh, newCMND, newMail, maNhanVien, trinhDo, newViTri, newLuong);
         List<Employee> employeeList = new ArrayList<>();
         employeeList.add(employee);
         ReadAndWriteEmployee.writeList(employeeList, true);
     }
+
 
     @Override
     public void display() {

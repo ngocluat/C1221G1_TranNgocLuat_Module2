@@ -4,8 +4,8 @@ public class CheckInputName {
 
 
 
-    public static boolean regexNameServiice(String tenDichVu) {
-        String regexTenDichVu = "^([A-Z][a-z]+)(\\s[A-Z][a-z]+)*$";
-        return tenDichVu.matches(regexTenDichVu);
+    public static boolean regexName(String name) {
+        String regexTenChuanHoa = "^([A-Z][a-z]+)(\\s[A-Z][a-z]+)*$";
+        return name.matches(regexTenChuanHoa);
     }
 }

@@ -4,16 +4,10 @@ import java.util.Arrays;
 
 public class BaiTapBob {
 
-    public static int[] swap(int[] arr) {
-
-        int temp = arr[arr.length - 1]; // = 1
-        arr[arr.length - 1] = arr[0];//1 gán -2
-        arr[0] = temp;
-        return arr;
-    }
-
     public static void main(String[] args) {
-        int[] aarr = {1, 5, 10, -2};
-        System.out.println(Arrays.toString(swap(aarr)));
+        int[] arr={1,2,3,4,5,2,1,1,23,4,0};
+
+        Arrays.sort(arr);
+        System.out.println(Arrays.toString(arr));
     }
 }
