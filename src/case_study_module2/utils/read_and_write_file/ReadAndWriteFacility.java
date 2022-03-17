@@ -10,10 +10,10 @@ import java.util.List;
 
 public class ReadAndWriteFacility {
 
-    final static String NAME_FILE_VILLA = "src\\case_study_module2\\data\\VilaFile.csv";
+    final static String NAME_FILE_VILLA = "src\\case_study_module2\\data\\vilaFile.csv";
     final static String NAME_FILE_ROOM = "src\\case_study_module2\\data\\roomFile.csv";
     final static String NAME_FILE_HOUSE = "src\\case_study_module2\\data\\HouseFile.csv";
-
+// dọc file
     private static List<String> readListString(String pathFile) {
         List<String> stringList = new ArrayList<>();
         File file = new File(pathFile);

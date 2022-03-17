@@ -18,7 +18,7 @@ public  static  void functionFaciliy(){
         facility = Integer.parseInt(scanner.nextLine());
 
     }catch (NumberFormatException e ){
-        System.err.println(" bạn nhập chữ nhập lại di");
+        System.out.println(" có vẽ như bạ nhạp sai mất rồi!! nhập lại di");
     }
     switch (facility) {
         case 1:
@@ -31,7 +31,12 @@ public  static  void functionFaciliy(){
                     "3.\tAdd New Room\n" +
                     "4.4.\tBack to menu");
             System.out.println(" nhập Facility bạn muốn thêm ");
-            int add = Integer.parseInt(scanner.nextLine());
+            int add =0;
+            try {
+                 add = Integer.parseInt(scanner.nextLine());
+            }catch (NumberFormatException e ){
+                System.out.println("có vẽ như bạn đã nhập sai ");
+            }
             switch (add){
                 case 1:
                     facilityService.addVilla();

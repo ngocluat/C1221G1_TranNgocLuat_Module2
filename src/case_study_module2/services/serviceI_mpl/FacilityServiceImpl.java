@@ -22,7 +22,6 @@ public class FacilityServiceImpl implements IFacilityDisplayMaintenance, IFacili
     static List<Villa> villaList = null;
     static List<Room> roomList = null;
     static List<House> houseList = null;
-
     static {
         villaList = ReadAndWriteFacility.readVillaList();
         roomList = ReadAndWriteFacility.readRoomList();
@@ -44,9 +43,10 @@ public class FacilityServiceImpl implements IFacilityDisplayMaintenance, IFacili
             }
         }
     }
+
     @Override
     public void display() {
-        System.out.println("++++++✞ঔৣVĨĹĹÁ ♚+++++++");
+        System.out.println("=========✞ঔৣVVilla♚=========");
         for (Villa villa : villaList) {
             System.out.println(villa);
         }
@@ -55,7 +55,7 @@ public class FacilityServiceImpl implements IFacilityDisplayMaintenance, IFacili
         ) {
             System.out.println(room);
         }
-        System.out.println("+=========๖²⁴ʱᕼOᑌᔕE ︵❣======");
+        System.out.println("+=========๖²⁴ʱᕼOᑌSE ︵❣======");
         for (House house : houseList) {
             System.out.println(house);
         }
@@ -70,24 +70,40 @@ public class FacilityServiceImpl implements IFacilityDisplayMaintenance, IFacili
         generalMethod();
         String tieuChuanPhong = null;
         do {
-            System.out.println(" nhập tiêu chuẩn phòng lớn hơn 30m2");
+            System.out.println(" nhập tiêu chuẩn phòng lớn hơn 30m2 ");
             tieuChuanPhong = scanner.nextLine();
         } while (!CheckInputName.regexName(tieuChuanPhong));
         double dienTichHoBoi = 0;
         do {
             System.out.println("diện tích hồ bơi lớn hơn 30m2");
-            dienTichHoBoi = Double.parseDouble(scanner.nextLine());
+            try {
+                dienTichHoBoi = Double.parseDouble(scanner.nextLine());
+            } catch (NumberFormatException e) {
+                System.out.println("nhập số");
+            }
 
         } while (dienTichHoBoi < 30);
         int soTang = 0;
         do {
             System.out.println(" nhập số tầng ");
-            soTang = Integer.parseInt(scanner.nextLine());
+
+            try {
+                soTang = Integer.parseInt(scanner.nextLine());
+            } catch (NumberFormatException e) {
+                System.out.println("nhập số");
+            }
         } while (soTang < 0);
 
         Villa villa = new Villa(maDichVu, tenDichVu, dienTichSuDung, chiPhiThue, soNguoiToiDa, kieuThue, tieuChuanPhong, dienTichHoBoi, soTang);
-        villaList.add(villa);
-        ReadAndWriteFacility.writeListVilla(villaList, true);
+        System.out.println("bạn chắc chắn thêm mới \n Y or N");
+        String y = "Y";
+        String select = scanner.nextLine();
+        if (y.equals(select.toUpperCase())) {
+            villaList.add(villa);
+            ReadAndWriteFacility.writeListVilla(villaList, true);
+        } else {
+            System.out.println(" không  thêm mới ");
+        }
 
     }
 
@@ -98,13 +114,19 @@ public class FacilityServiceImpl implements IFacilityDisplayMaintenance, IFacili
             maDichVu = scanner.nextLine();
         } while (!CheckInputServiceCode.regexMaDichVuRoom(maDichVu));
         generalMethod();
-        System.out.println(" tiêu dụ miễn phí đi kèm ");
+        System.out.println(" tiêu vụ miễn phí đi kèm ");
         String free = scanner.nextLine();
 
         Room room = new Room(maDichVu, tenDichVu, dienTichSuDung, chiPhiThue, soNguoiToiDa, kieuThue, free);
-        roomList.add(room);
-        ReadAndWriteFacility.writeListRoom(roomList, true);
-
+        System.out.println("bạn chắc chắn thêm mới \n Y or N");
+        String y = "Y";
+        String select = scanner.nextLine();
+        if (y.equals(select.toUpperCase())) {
+            roomList.add(room);
+            ReadAndWriteFacility.writeListRoom(roomList, true);
+        } else {
+            System.out.println(" không thêm mới ");
+        }
     }
 
     public void addHouse() {
@@ -114,7 +136,6 @@ public class FacilityServiceImpl implements IFacilityDisplayMaintenance, IFacili
             maDichVu = scanner.nextLine();
         } while (!CheckInputServiceCode.regexMaDichVuHouse(maDichVu));
         generalMethod();
-
         String tieuChuanPhong = null;
         do {
             System.out.println(" nhập tiêu chuẩn phòng");
@@ -127,31 +148,59 @@ public class FacilityServiceImpl implements IFacilityDisplayMaintenance, IFacili
         } while (soTang < 0);
 
         House house = new House(maDichVu, tenDichVu, dienTichSuDung, chiPhiThue, soNguoiToiDa, kieuThue, tieuChuanPhong, soTang);
-        houseList.add(house);
-        ReadAndWriteFacility.writeListHouse(houseList, true);
+        System.out.println("bạn chắc chắn thêm mới \n Y or N");
+        String y = "Y";
+        String select = scanner.nextLine();
+        if (y.equals(select.toUpperCase())) {
+            houseList.add(house);
+            ReadAndWriteFacility.writeListHouse(houseList, true);
+        } else {
+            System.out.println(" không thêm mới ");
+        }
     }
 
     public void generalMethod() {
         do {
             System.out.println(" nhập tên dịch vụ");
             tenDichVu = scanner.nextLine();
-        } while (!CheckInputName.regexName(tenDichVu));
+
+            if (!CheckInputName.regexName(tenDichVu)){
+                System.out.println(" nhập sai ");
+            }else break;
+        } while (true);
+
         do {
             System.out.println(" nhập diện tích sữ dụng");
-            dienTichSuDung = Double.parseDouble(scanner.nextLine());
+            try {
+                dienTichSuDung = Double.parseDouble(scanner.nextLine());
+            } catch (NumberFormatException e) {
+                System.out.println("no no !!! ");
+            }
         } while (dienTichSuDung < 30);
         do {
             System.out.println(" nhập chi phí thuê ");
-            chiPhiThue = Double.parseDouble(scanner.nextLine());
-        } while (chiPhiThue < 0);
+            try {
+                chiPhiThue = Double.parseDouble(scanner.nextLine());
+                if (chiPhiThue > 0) {
+                    break;
+                }
+            } catch (NumberFormatException e) {
+                System.out.println("no no !!! ");
+            }
+        } while (true);
         do {
             System.out.println(" nhập số lượn người tối đa!!lượng người tối đa phải >0 và nhỏ hơn <20     ");
             soNguoiToiDa = Integer.parseInt(scanner.nextLine());
         } while (soNguoiToiDa < 0 || soNguoiToiDa > 20);
         do {
-            System.out.println(" kiểu thuê gồm thuê theo năm\n tháng\nngày\n giờ\n");
+            System.out.println(" kiểu thuê gồm thuê theo :\nnăm\n tháng\nngày\n giờ\n" +
+                    "yêu cầu nhập đúng ");
             kieuThue = scanner.nextLine();
-
         } while (!kieuThue.equals("năm") && !kieuThue.equals("tháng") && !kieuThue.equals("ngày") && !kieuThue.equals("giờ"));
+
+
     }
+
+
 }
+

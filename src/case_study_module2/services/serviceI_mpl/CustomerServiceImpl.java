@@ -4,13 +4,11 @@ import case_study_module2.model.Customer;
 import case_study_module2.services.ICustomerService;
 import case_study_module2.utils.read_and_write_file.ReadAndWriteCostummer;
 import case_study_module2.utils.read_and_write_file.regular_expression.CheckInputName;
-
-import java.util.LinkedList;
 import java.util.List;
 import java.util.Scanner;
 
 public class CustomerServiceImpl implements ICustomerService {
-    static List<Customer> khachHang = new LinkedList<>();
+    static List<Customer> khachHang = null;
     static Scanner scanner = new Scanner(System.in);
 
     static {
@@ -25,7 +23,12 @@ public class CustomerServiceImpl implements ICustomerService {
             if (khachHang.get(i).getHoVaTen().equals(tenKhachHang)) {
                 System.out.println(" 1. you want to fix it all?\n" +
                         "2. edit by selection");
-                int choseEdit = Integer.parseInt(scanner.nextLine());
+                int choseEdit=0;
+                try {
+                   choseEdit = Integer.parseInt(scanner.nextLine());
+              }catch (NumberFormatException e ){
+                    System.out.println("hình như bạn bạn sai !!! đẵ trỡ về menu chính  ");
+                }
                 switch (choseEdit) {
                     case 1:
                         System.out.println("sửa ngày sinh ");
@@ -55,7 +58,12 @@ public class CustomerServiceImpl implements ICustomerService {
                         System.out.println("1.sửa ngày sinh\n" +
                                 "2.sửa loại khách hàng\n" +
                                 "3. sửa địa chỉ ");
-                        int choseSelection = Integer.parseInt(scanner.nextLine());
+                        int choseSelection =0;
+                        try {
+                             choseSelection = Integer.parseInt(scanner.nextLine());
+                        }catch (NumberFormatException e ){
+                            System.out.println("bạn chọn không đúng thì phải ");
+                        }
                         switch (choseSelection) {
                             case 1:
                                 System.out.println("sửa ngày sinh ");
@@ -115,7 +123,6 @@ public class CustomerServiceImpl implements ICustomerService {
         String newMail = scanner.nextLine();
         System.out.println(" mã khách hàng");
         String maKhachhang = scanner.nextLine();
-
         String loaiKhachHang = null;
         boolean flag = false;
         do {
@@ -147,9 +154,12 @@ public class CustomerServiceImpl implements ICustomerService {
 
             }
         } while (flag);
+        String diaChi =null;
+        do {
+           System.out.println(" nhập địa chỉ");
+            diaChi = scanner.nextLine();
+       }while (!CheckInputName.regexName(diaChi));
 
-        System.out.println(" nhập địa chỉ");
-        String diaChi = scanner.nextLine();
 
         Customer customer = new Customer(newName, newBirthday, newGioiTinh, newCMND, newMail, maKhachhang, loaiKhachHang, diaChi);
         addCustmer(customer);

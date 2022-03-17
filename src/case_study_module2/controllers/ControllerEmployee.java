@@ -6,8 +6,8 @@ import java.util.Scanner;
 
 public class ControllerEmployee {
     static Scanner scanner= new Scanner(System.in);
-    public  static  void functionEmployee(){
-        int employees= 0;
+    public static void functionEmployee() {
+        int employees = 0;
         EmployeeServiceImpl employeeServiceImpl = new EmployeeServiceImpl();
         System.out.println("xin mời lựa chọn\n" +
                 "1\tDisplay list employees\n" +
@@ -16,10 +16,9 @@ public class ControllerEmployee {
                 "4\tReturn main menu\n");
         try {
             employees = Integer.parseInt(scanner.nextLine());
-        }catch (NumberFormatException e){
-            System.err.println("bạn đẵ nhập chữ vào chương trình");
+        } catch (NumberFormatException e) {
+            System.out.println("bạn đẵ nhập sai yêu cầu !! vào chương trình");
         }
-
         switch (employees) {
             case 1:
                 employeeServiceImpl.display();
@@ -32,8 +31,6 @@ public class ControllerEmployee {
                 break;
             case 4:
                 break;
-            default:
-                System.out.println(" nhập sai ");
         }
     }
 }

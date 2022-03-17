@@ -85,9 +85,19 @@ public  class Facility {
     }
 
     public String toStringFacility() {
-
-        return this.getMaDichVu()+ "," +this.getTenDichVu() + "," + this.getDienTichSuDung() + "," + this.getChiPhiThue() + "," + this.getSoLuongNguoiToiDa() + "," + this.getKieuThue();
-
+        return this.getMaDichVu() + "," + this.getTenDichVu() + "," + this.getDienTichSuDung() + "," + this.getChiPhiThue() + "," + this.getSoLuongNguoiToiDa() + "," + this.getKieuThue();
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Facility)) return false;
+        Facility facility = (Facility) o;
+        return getMaDichVu().equals(facility.getMaDichVu());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getMaDichVu());
+    }
 }

@@ -19,7 +19,7 @@ public class ControllerServices {
             customer = Integer.parseInt(scanner.nextLine());
 
         } catch (NumberFormatException e) {
-            System.err.println(" bạn nhập chữ!! yêu cầu nhập lại");
+            System.out.println(" bạn nhập sai lựa chọn !! yêu cầu nhập lại");
         }
         switch (customer) {
             case 1:

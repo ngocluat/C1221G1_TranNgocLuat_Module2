@@ -1,12 +1,14 @@
 package case_study_module2.model;
 
+import java.util.Objects;
+
 public class Booking {
-    String maBooking;
-    String ngayBatDau;
-    String ngayKetThuc;
-    String maKhachHang;
-    String tenDichVu;
-    String loaiDichVu;
+    private String maBooking;
+    private String ngayBatDau;
+    private String ngayKetThuc;
+    private String maKhachHang;
+    private String tenDichVu;
+    private String loaiDichVu;
 
     public Booking() {
     }
@@ -78,5 +80,23 @@ public class Booking {
                 ", tenDichVu='" + tenDichVu + '\'' +
                 ", loaiDichVu='" + loaiDichVu + '\'' +
                 '}';
+    }
+
+    public String toStringBooking() {
+        return this.getMaBooking() + "," + this.getNgayBatDau() + "," + this.getNgayKetThuc() + "," + this.getMaKhachHang() + "," + this.getTenDichVu() + "," + this.getLoaiDichVu();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Booking)) return false;
+        Booking booking = (Booking) o;
+        return Objects.equals(getMaBooking(), booking.getMaBooking()) &&
+                Objects.equals(getMaKhachHang(), booking.getMaKhachHang());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getMaBooking(), getMaKhachHang());
     }
 }

@@ -1,11 +1,11 @@
 package case_study_module2.model;
 
 public class Contract {
-    String soHopDong;
-    String maBooking;
-    double soTienCocTruoc;
-    double tongSoTienThanhToan;
-    String maKhachHang;
+   private String soHopDong;
+    private   String maBooking;
+    private   double soTienCocTruoc;
+    private  double tongSoTienThanhToan;
+    private  String maKhachHang;
 
     public Contract() {
     }
@@ -67,5 +67,8 @@ public class Contract {
                 ", tongSoTienThanhToan=" + tongSoTienThanhToan +
                 ", maKhachHang='" + maKhachHang + '\'' +
                 '}';
+    }
+    public  String toStringConTract(){
+        return this.getSoHopDong()+","+ this.getMaBooking()+","+ this.getSoTienCocTruoc()+","+this.getTongSoTienThanhToan()+","+this.getMaKhachHang();
     }
 }

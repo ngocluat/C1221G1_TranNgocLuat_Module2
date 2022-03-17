@@ -22,12 +22,17 @@ public class EmployeeServiceImpl implements IEmployeeService {
         } catch (Exception e) {
             e.printStackTrace();
         }
-
+boolean check = true;
         for (int i = 0; i < nhanVien.size(); i++) {
             if (nhanVien.get(i).getMaNhanVien().equals(maNhanVien)) {
                 System.out.println(" 1. you want to fix it all?\n" +
                         "2. edit by selection");
-                int choseEdit = Integer.parseInt(scanner.nextLine());
+                int choseEdit = 0;
+                try {
+                    choseEdit = Integer.parseInt(scanner.nextLine());
+                } catch (NumberFormatException e) {
+                    System.out.println(" hình như bạn nhập sai  ");
+                }
                 switch (choseEdit) {
                     case 1:
                         System.out.println(" ngày sinh ");
@@ -51,14 +56,18 @@ public class EmployeeServiceImpl implements IEmployeeService {
                         System.out.println("vị trí ");
                         String editViTri = scanner.nextLine();
                         nhanVien.get(i).setViTri(editViTri);
-                        System.out.println(" lương");
-                        long editLuong = Long.parseLong(scanner.nextLine());
+
+                        long editLuong = 0;
+                        try {
+                            System.out.println(" lương");
+                            editLuong = Long.parseLong(scanner.nextLine());
+                        } catch (NumberFormatException e) {
+                            System.out.println("bạn nhập lương của nhân viên không đúng ");
+                        }
                         nhanVien.get(i).setLuong(editLuong);
                         ReadAndWriteEmployee.writeList(nhanVien, false);
                         break;
-
-
-                    case 2 :
+                    case 2:
                         System.out.println("1.sửa ngày sinh\n" +
                                 "2.sửa loại trình dộ \n" +
                                 "3. sửa lương \n" +
@@ -79,7 +88,12 @@ public class EmployeeServiceImpl implements IEmployeeService {
                                 break;
                             case 3:
                                 System.out.println("  sửa lương");
-                                long editLuongSelect = Long.parseLong(scanner.nextLine());
+                                long editLuongSelect = 6000000;
+                                try {
+                                    editLuongSelect = Long.parseLong(scanner.nextLine());
+                                } catch (NumberFormatException e) {
+                                    System.out.println("bạn nhập lương của nhân viên không đúng ");
+                                }
                                 nhanVien.get(i).setLuong(editLuongSelect);
                                 ReadAndWriteEmployee.writeList(nhanVien, false);
                                 break;
@@ -93,8 +107,13 @@ public class EmployeeServiceImpl implements IEmployeeService {
                         break;
 
                 }
-
+                check = true;
+            } else {
+                check = false;
             }
+        }
+        if (!check) {
+            System.out.println(" hình như hk có mã nhân viên bạn tìm !! thử lại sau nhá  ");
         }
     }
 
@@ -106,9 +125,11 @@ public class EmployeeServiceImpl implements IEmployeeService {
             System.out.println(" nhập họ tên ");
             newName = scanner.nextLine();
         } while (!CheckInputName.regexName(newName));
-
-        System.out.println(" ngày sinh ");
-        String newBirthday = scanner.nextLine();
+        String newBirthday = null;
+        do {
+            System.out.println(" ngày sinh ");
+            newBirthday = scanner.nextLine();
+        } while (!CheckInputName.regexNgaySinh(newBirthday));
         String newGioiTinh = null;
 
         do {
@@ -192,9 +213,9 @@ public class EmployeeServiceImpl implements IEmployeeService {
 
     @Override
     public void display() {
-        List<Employee> moToList = ReadAndWriteEmployee.readList();
-        for (int i = 0; i < moToList.size(); i++) {
-            System.out.println((1 + i) + "." + moToList.get(i));
+        List<Employee> employeeList = ReadAndWriteEmployee.readList();
+        for (int i = 0; i < employeeList.size(); i++) {
+            System.out.println((1 + i) + "." + employeeList.get(i));
         }
     }
 
