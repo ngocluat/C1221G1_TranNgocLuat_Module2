@@ -1,8 +1,8 @@
 package case_study_module2.utils.read_and_write_file;
 
-import case_study_module2.model.House;
-import case_study_module2.model.Room;
-import case_study_module2.model.Villa;
+import case_study_module2.model.facility.House;
+import case_study_module2.model.facility.Room;
+import case_study_module2.model.facility.Villa;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -61,10 +61,8 @@ public class ReadAndWriteFacility {
             Room room = new Room(arr[0], arr[1], Double.parseDouble(arr[2]), Double.parseDouble(arr[3]),
                     Integer.parseInt(arr[4]), arr[5], arr[6]);
             villaList.add(room);
-
         }
         return villaList;
-
     }
 
     public static List<House> readHouseList() {
@@ -80,47 +78,4 @@ public class ReadAndWriteFacility {
         return houseList;
     }
 
-
-    //        ghi file
-    private static void writeListString(String filePath, List<String> stringList, boolean append) {
-        File file = new File(filePath);
-        FileWriter fileWriter = null;
-        BufferedWriter bufferedWriter = null;
-        try {
-            fileWriter = new FileWriter(file, append);
-            bufferedWriter = new BufferedWriter(fileWriter);
-            for (String string : stringList) {
-                bufferedWriter.write(string);
-                bufferedWriter.newLine();
-            }
-            bufferedWriter.close();
-            fileWriter.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
-    public static void writeListVilla(List<Villa> villaList, boolean append) {
-        List<String> stringList = new ArrayList<>();
-        for (Villa c : villaList) {
-            stringList.add(c.toStringFacility());
-        }
-        writeListString(NAME_FILE_VILLA, stringList, append);
-    }
-
-    public static void writeListRoom(List<Room> roomList, boolean append) {
-        List<String> stringList = new ArrayList<>();
-        for (Room c : roomList) {
-            stringList.add(c.toStringFacility());
-        }
-        writeListString(NAME_FILE_ROOM, stringList, append);
-    }
-
-    public static void writeListHouse(List<House> houseList, boolean append) {
-        List<String> stringList = new ArrayList<>();
-        for (House c : houseList) {
-            stringList.add(c.toStringFacility());
-        }
-        writeListString(NAME_FILE_HOUSE, stringList, append);
-    }
 }

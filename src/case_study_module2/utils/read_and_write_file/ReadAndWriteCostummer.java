@@ -66,5 +66,7 @@ public class ReadAndWriteCostummer {
         }
         writeListString(NAME_FILE, stringList, append);
     }
-
+//        List<Employee> employeeList = new ArrayList<>();
+//        employeeList.add(employee);
+//        ReadAndWriteEmployee.writeList(employeeList, true);
 }

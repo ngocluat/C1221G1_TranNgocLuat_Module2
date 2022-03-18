@@ -1,6 +1,9 @@
-package case_study_module2.model;
+package case_study_module2.model.facility;
 
-public class Room extends Facility {
+
+import case_study_module2.services.IToStringCSV;
+
+public class Room extends Facility implements IToStringCSV {
     private String dichVuMienPhiDiKem;
 
     public Room() {
@@ -20,8 +23,10 @@ public class Room extends Facility {
         return "Room{" + super.toString() +
                 "dichVuMienPhiDiKem='" + dichVuMienPhiDiKem + '\'' +
                 '}';}
+
+
     @Override
-    public String toStringFacility() {
-        return super.toStringFacility()+","+this.getDichVuMienPhiDiKem();
+    public String fileCSV() {
+        return super.fileCSV()+","+this.getDichVuMienPhiDiKem();
     }
 }

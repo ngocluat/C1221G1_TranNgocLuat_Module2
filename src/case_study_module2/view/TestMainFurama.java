@@ -4,7 +4,7 @@ import case_study_module2.controllers.Furama;
 
 
 public class TestMainFurama {
-    public static void main(String[] args) {
+    public static void main(String[] args){
         Furama.displayMainMenu();
     }
 }

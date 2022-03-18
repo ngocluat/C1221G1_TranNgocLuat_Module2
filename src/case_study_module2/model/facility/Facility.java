@@ -1,9 +1,11 @@
-package case_study_module2.model;
+package case_study_module2.model.facility;
 
+
+import case_study_module2.services.IToStringCSV;
 
 import java.util.Objects;
 
-public  class Facility {
+public  class Facility implements IToStringCSV {
     String maDichVu;
     private String tenDichVu;
     private double dienTichSuDung;
@@ -99,5 +101,10 @@ public  class Facility {
     @Override
     public int hashCode() {
         return Objects.hash(getMaDichVu());
+    }
+
+    @Override
+    public String fileCSV() {
+        return this.getMaDichVu() + "," + this.getTenDichVu() + "," + this.getDienTichSuDung() + "," + this.getChiPhiThue() + "," + this.getSoLuongNguoiToiDa() + "," + this.getKieuThue();
     }
 }

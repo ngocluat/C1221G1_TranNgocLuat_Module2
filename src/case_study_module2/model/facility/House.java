@@ -1,6 +1,7 @@
-package case_study_module2.model;
+package case_study_module2.model.facility;
 
-public class House extends Facility {
+
+public class House extends Facility  {
 
     private String tieuChuanPhong;
     private int soTang;
@@ -41,10 +42,8 @@ public class House extends Facility {
 
 
     @Override
-    public String toStringFacility() {
-        return super.toStringFacility()+ "," + this.getTieuChuanPhong() + "," + this.getSoTang();
+    public String fileCSV() {
+        return super.fileCSV() +"," + this.getTieuChuanPhong() + "," + this.getSoTang();
     }
-
-
-
 }
+
