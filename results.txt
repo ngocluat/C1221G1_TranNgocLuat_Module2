@@ -1,0 +1,9 @@
+Single responsibility principle
+Open/closed principle
+Liskov substitution principle
+Interface segregation principle
+Dependency inversion principle
+
+
+
+tạo model cho dối tượng => kế thừ ItoString và ghi file =>

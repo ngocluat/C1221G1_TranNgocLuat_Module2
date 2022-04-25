@@ -31,13 +31,15 @@ public  static  void functionFaciliy(){
                     "3.\tAdd New Room\n" +
                     "4.4.\tBack to menu");
             System.out.println(" nhập Facility bạn muốn thêm ");
-            int add =0;
-            try {
-                 add = Integer.parseInt(scanner.nextLine());
-            }catch (NumberFormatException e ){
-                System.out.println("có vẽ như bạn đã nhập sai ");
-            }
-            switch (add){
+            int add = 0;
+            do {
+                try {
+                    add = Integer.parseInt(scanner.nextLine());
+                } catch (NumberFormatException e) {
+                    System.out.println("có vẽ như bạn đã nhập sai ");
+                }
+            } while (add < 0 || add > 5);
+            switch (add) {
                 case 1:
                     facilityService.addVilla();
                     break;

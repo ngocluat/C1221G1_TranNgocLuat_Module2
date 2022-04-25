@@ -132,7 +132,12 @@ public class CustomerServiceImpl implements ICustomerService {
         boolean flag = false;
         do {
             System.out.println(" nhập loại khách hàng\n: 1.Diamond\n 2.Platinium\n 3.Gold,\n 4.Silver,\n 5.Member");
-            int customerType = Integer.parseInt(scanner.nextLine());
+            int customerType =-1;
+            try {
+                 customerType = Integer.parseInt(scanner.nextLine());
+            }catch (NumberFormatException e ){
+                System.out.println(" nhập sai ");
+            }
             switch (customerType) {
                 case 1:
                     loaiKhachHang = "Diamond";

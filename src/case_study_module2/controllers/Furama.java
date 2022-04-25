@@ -24,44 +24,21 @@ public class Furama {
                     "6.\tExit\n");
             try {
                 chose = Integer.parseInt(scanner.nextLine());
+            } catch (Exception e) {
+                System.out.println("!!! yêu cầu nhập  dúng  ");
+            }
                 switch (chose) {
                     case 1:
                         ControllerEmployee.functionEmployee();
                         break;
                     case 2:
-                        ControllerServices.funcctionSevice();
+                        ControllerCostomer.funcctionSevice();
                         break;
                     case 3:
                         ControllerFacility.functionFaciliy();
                         break;
                     case 4:
-                        int Booking =0;
-                        System.out.println("xin mời lựa chọn\n" +
-                                "1.\tAdd new booking\n" +
-                                "2.\tDisplay list booking\n" +
-                                "3.\tCreate new constracts\n" +// tạo hợp dồng
-                                "4.\tDisplay list contracts\n" +
-                                "5.\tEdit contracts\n" +
-                                "6.\tReturn main menu\n");
-                        try {
-                            Booking = Integer.parseInt(scanner.nextLine());
-                        }catch (NumberFormatException e ){
-                            System.out.print(" bạn đã nhập chữ !!! yêu cầu nhập lại ");
-                        }
-                        switch (Booking) {
-                            case 1:
-                                break;
-                            case 2:
-                                break;
-                            case 3:
-                                break;
-                            case 4:
-                                break;
-                            case 5:
-                                break;
-                            case 6:
-                                break;
-                        }
+                      ControllelrBooking.functionBooking();
                         break;
                     case 5:
                         int promotion = 0;
@@ -87,12 +64,11 @@ public class Furama {
                         flag = false;
                         break;
                 }
-            } catch (NumberFormatException e) {
-                System.out.println(" có gì đó sai sai !!! yêu cầu nhập  dúng  ");
-            }
+
 
         } while (flag);
     }
+
 
 
 }

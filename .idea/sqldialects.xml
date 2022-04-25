@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="SqlDialectMappings">
+    <file url="file://$PROJECT_DIR$/../C1221G1_[TranNgocLuat]_Module3SQE/case_study_module3_data_base.sql" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/../C1221G1_[TranNgocLuat]_Module3SQE/ss3_thoa_tac_voi_csdl/bai_tap/ThaoTacVoiCoSoDuLieu.sql" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/../C1221G1_[TranNgocLuat]_Module3SQE/ss3_thoa_tac_voi_csdl/bai_tap/TruyVanDuLieu.sql" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/../C1221G1_[TranNgocLuat]_Module3SQE/ss3_thoa_tac_voi_csdl/thuc _hanh/BaiTap1.sql" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/../C1221G1_[TranNgocLuat]_Module3SQE/ss3_thoa_tac_voi_csdl/thuc _hanh/ThemQuanLySinhVien.sql" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/../C1221G1_[TranNgocLuat]_Module3SQE/ss4_cac_ham_thong_dung/bai_tap/BaiTap1.sql" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/../C1221G1_[TranNgocLuat]_Module3SQE/ss5_sql_view_index_store_procedure/bai_tap/BaiTap1.sql" dialect="MariaDB" />
+  </component>
+</project>

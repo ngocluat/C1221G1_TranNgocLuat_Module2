@@ -1,0 +1,88 @@
+
+ if (benhNhans.size() == 0) {
+            soThuTuBenhAn = 1;
+        } else {
+            soThuTuBenhAn = (benhNhans.get(benhNhans.size() - 1).getSoThuTu()) + 1;
+        }
+
+
+
+ System.out.println("nhập id cần xóa ");
+        int idXoa = Integer.parseInt(scanner.nextLine());
+        boolean flag = false;
+
+
+
+            System.out.println("banjn có muốn chắn chắn xóa hay không Y/ N??");
+                String chon = scanner.nextLine();
+                if ("y".equals(chon.toLowerCase())) {
+                    benhNhans.remove(benhNhans.get(i));
+                    System.out.println(" đã xóa thành công ");
+                }else {
+                    System.out.println(" không xóa ");
+                }
+
+
+
+        mảng    arr[0], arr[1], arr[2], arr[3], arr[4], arr[5], arr[6], arr[7]);
+
+
+                điều kiện
+
+                         do {
+                                System.out.println("nhập lựa chọn của bạn \n" +
+                                        "1.      \n" +
+                                        "2.     \n" +
+                                        "3. thoát ");
+
+                                try {
+                                    choise = Integer.parseInt(scanner.nextLine());
+                                } catch (NumberFormatException e) {
+                                    System.out.println(" bạn nhập không chính xát !!");
+                                }
+                            } while (choise < 0 || choise > 3);
+                            switch (choise) {
+                                case 1:
+                                    break;
+                                case 2:
+                                    break;
+                            }
+
+
+
+        String loaiKhachHang = null;
+        boolean flag = false;
+        do {
+            System.out.println(" nhập loại khách hàng\n: 1.Diamond\n 2.Platinium\n 3.Gold,\n 4.Silver,\n 5.Member");
+            int customerType =-1;
+            try {
+                 customerType = Integer.parseInt(scanner.nextLine());
+            }catch (NumberFormatException e ){
+                System.out.println(" nhập sai ");
+            }
+            switch (customerType) {
+                case 1:
+                    loaiKhachHang = "Diamond";
+                    flag = false;
+                    break;
+                case 2:
+                    loaiKhachHang = "Platinium";
+                    flag = false;
+                    break;
+                case 3:
+                    loaiKhachHang = "Gold";
+                    flag = false;
+                    break;
+                case 4:
+                    loaiKhachHang = "Silver";
+                    flag = false;
+                    break;
+                case 5:
+                    loaiKhachHang = "Member";
+                    flag = false;
+                    break;
+                default:
+                    flag = true;
+
+            }
+        } while (flag);

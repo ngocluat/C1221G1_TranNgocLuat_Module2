@@ -60,7 +60,6 @@ public class Manage {
                         case 3:
                             quanLyXeMay.hienThi();
                             break;
-
                     }
                     break;
                 case 3:

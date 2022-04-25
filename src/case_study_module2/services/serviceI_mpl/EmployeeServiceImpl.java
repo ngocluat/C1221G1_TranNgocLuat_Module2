@@ -3,9 +3,7 @@ package case_study_module2.services.serviceI_mpl;
 import case_study_module2.model.Employee;
 import case_study_module2.services.IEmployeeService;
 import case_study_module2.utils.read_and_write_file.ReadAndWriteEmployee;
-import case_study_module2.utils.read_and_write_file.WriteFile;
 import case_study_module2.utils.read_and_write_file.regular_expression.CheckInput;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -72,7 +70,12 @@ public class EmployeeServiceImpl implements IEmployeeService {
                                 "2.sửa loại trình dộ \n" +
                                 "3. sửa lương \n" +
                                 "4. sửa vị trí\n");
-                        int choseSelection = Integer.parseInt(scanner.nextLine());
+                        int choseSelection =-1;
+                        try {
+                           choseSelection = Integer.parseInt(scanner.nextLine());
+                      }catch (NumberFormatException e){
+                          System.out.println(" lỗi ");
+                      }
                         switch (choseSelection) {
                             case 1:
                                 System.out.print("sửa ngày sinh ");
@@ -99,9 +102,16 @@ public class EmployeeServiceImpl implements IEmployeeService {
                                 break;
                             case 4:
                                 System.out.print(" sửa vị trí ");
-                                String editViTriSekect = scanner.nextLine();
-                                nhanVien.get(i).setViTri(editViTriSekect);
-                                ReadAndWriteEmployee.writeList(nhanVien, false);
+                                String editViTriSekect =  scanner.nextLine();
+                                String y = "Y";
+                                   System.out.println(" bạn có muốn chắc chắn sửa Y/N ");
+                                   String selection= scanner.nextLine();
+                                    if (selection.toUpperCase().equals(y)){
+                                        nhanVien.get(i).setViTri(editViTriSekect);
+                                        ReadAndWriteEmployee.writeList(nhanVien, false);
+                                    }else {
+                                        System.out.println("không sửa nhá ");
+                                    }
                                 break;
                         }
                         break;

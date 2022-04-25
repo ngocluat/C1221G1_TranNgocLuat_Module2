@@ -40,7 +40,6 @@ public class House extends Facility  {
                 '}';
     }
 
-
     @Override
     public String fileCSV() {
         return super.fileCSV() +"," + this.getTieuChuanPhong() + "," + this.getSoTang();

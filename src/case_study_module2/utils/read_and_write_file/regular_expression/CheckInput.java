@@ -2,11 +2,6 @@ package case_study_module2.utils.read_and_write_file.regular_expression;
 
 public class CheckInput {
 
-    public static boolean regexDienTich(String dienTich) {
-        String regexDienTich = "^[3-9]([0-9]+)$";
-        return dienTich.matches(regexDienTich);
-    }
-
     public static boolean regexName(String name) {
         String regexTenChuanHoa = "^\\p{Lu}\\p{Ll}+( \\p{Lu}\\p{Ll}+)*$";
         return name.matches(regexTenChuanHoa);
@@ -33,8 +28,15 @@ public class CheckInput {
     }
 
     public static boolean regexEmail(String email) {
-        String regex = "\\S+@\\S+\\.\\S+";
+        String regex = "^\\S+@\\S+\\.\\S+$";
         return email.matches(regex);
     }
-
+    public static boolean regexNgaySinhvip(String ngaySinh) {
+        String regex = "^(?:(?:31(\\/|-|\\.)(?:0?[13578]|1[02]))\\1|(?:(?:29|30)(\\/|-|\\.)(?:0?[13-9]|1[0-2])\\2))(?:(?:1[6-9]|[2-9]\\d)?\\d{2})$|^(?:29(\\/|-|\\.)0?2\\3(?:(?:(?:1[6-9]|[2-9]\\d)?(?:0[48]|[2468][048]|[13579][26])|(?:(?:16|[2468][048]|[3579][26])00))))$|^(?:0?[1-9]|1\\d|2[0-8])(\\/|-|\\.)(?:(?:0?[1-9])|(?:1[0-2]))\\4(?:(?:1[6-9]|[2-9]\\d)?\\d{2})$";
+        return ngaySinh.matches(regex);
+    }
+    public static boolean regexSoHopDongMa(String ma) {
+        String regex = "^[0]\\d{2,5}$";
+        return ma.matches(regex);
+    }
 }

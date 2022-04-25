@@ -1,0 +1,3 @@
+1,bánh,orio,10000.0,ngọt
+2,kẹo,orio,4000.0,kẹo mút
+4,bút,bút,3000.0,bút xanh

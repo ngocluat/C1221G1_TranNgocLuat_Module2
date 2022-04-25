@@ -1,6 +1,7 @@
 package test_example.baitihi;
 
 import bai_tap_lam_them_ngay12_3_22.model.OTo;
+import case_study_module2.services.IToStringCSV;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -47,7 +48,7 @@ public class DocGhiFile {
     }
 
     //ghi file
-    private static void writeListString(String filePath, List<String> stringList, boolean append) {
+    private static void writeListString1(String filePath, List<String> stringList, boolean append) {
         File file = new File(filePath);
         FileWriter fileWriter = null;
         BufferedWriter bufferedWriter = null;
@@ -76,7 +77,24 @@ public class DocGhiFile {
 
 //arr[0], arr[1], arr[2], arr[3], arr[4], arr[5], arr[6], arr[7]
 
-
+    // ghi file theo interface
+    public static <T> void writeListString(String filePath, List<T> list, boolean append) {
+        File file = new File(filePath);
+        FileWriter fileWriter = null;
+        BufferedWriter bufferedWriter = null;
+        try {
+            fileWriter = new FileWriter(file, append);
+            bufferedWriter = new BufferedWriter(fileWriter);
+            for (T t :list) {
+                bufferedWriter.write(((IToStringCSV) t).fileCSV());
+                bufferedWriter.newLine();
+            }
+            bufferedWriter.close();
+            fileWriter.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
 
 }

@@ -1,8 +1,10 @@
 package case_study_module2.model;
 
+import case_study_module2.services.serviceI_mpl.IToStringSet;
+
 import java.util.Objects;
 
-public class Booking {
+public class Booking implements IToStringSet {
     private String maBooking;
     private String ngayBatDau;
     private String ngayKetThuc;
@@ -98,5 +100,12 @@ public class Booking {
     @Override
     public int hashCode() {
         return Objects.hash(getMaBooking(), getMaKhachHang());
+    }
+
+
+
+    @Override
+    public String write() {
+        return  maBooking + "," + ngayBatDau + "," + ngayKetThuc + "," + maKhachHang + "," + tenDichVu + "," + loaiDichVu;
     }
 }

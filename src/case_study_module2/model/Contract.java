@@ -1,11 +1,13 @@
 package case_study_module2.model;
 
-public class Contract {
-   private String soHopDong;
-    private   String maBooking;
-    private   double soTienCocTruoc;
-    private  double tongSoTienThanhToan;
-    private  String maKhachHang;
+import case_study_module2.services.IToStringCSV;
+
+public class Contract implements IToStringCSV {
+    private String soHopDong;
+    private String maBooking;
+    private double soTienCocTruoc;
+    private double tongSoTienThanhToan;
+    private String maKhachHang;
 
     public Contract() {
     }
@@ -63,12 +65,21 @@ public class Contract {
         return "Contract{" +
                 "soHopDong='" + soHopDong + '\'' +
                 ", maBooking='" + maBooking + '\'' +
-                ", soTienCocTruoc=" + soTienCocTruoc +
-                ", tongSoTienThanhToan=" + tongSoTienThanhToan +
+                ", soTienCocTruoc=" + String.format("%,.0f",soTienCocTruoc) +
+                ", tongSoTienThanhToan=" +  String.format("%,.0f",tongSoTienThanhToan) +
                 ", maKhachHang='" + maKhachHang + '\'' +
                 '}';
     }
-    public  String toStringConTract(){
-        return this.getSoHopDong()+","+ this.getMaBooking()+","+ this.getSoTienCocTruoc()+","+this.getTongSoTienThanhToan()+","+this.getMaKhachHang();
+
+
+//    @Override
+//    public String write() {
+//        return soHopDong + "," + maBooking + "," + soTienCocTruoc + "," + tongSoTienThanhToan + "," + maKhachHang;
+//    }
+
+    @Override
+    public String fileCSV() {
+        return soHopDong + "," + maBooking + "," + soTienCocTruoc + "," + tongSoTienThanhToan + "," + maKhachHang;
+
     }
 }

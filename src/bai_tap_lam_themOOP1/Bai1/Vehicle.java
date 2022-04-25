@@ -55,7 +55,6 @@ public class Vehicle {
                 "ten='" + ten + '\'' +
                 ", tuoi=" + tuoi +
                 ", giaTriXe=" + giaTriXe +
-
                 ", dungTichXiLanh=" + dungTichXiLanh +
                 '}';
     }

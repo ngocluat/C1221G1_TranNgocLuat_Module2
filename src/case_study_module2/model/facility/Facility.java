@@ -79,8 +79,8 @@ public  class Facility implements IToStringCSV {
         return "Facility{" +
                 "maDichVu='" + maDichVu + '\'' +
                 ", tenDichVu='" + tenDichVu + '\'' +
-                ", dienTichSuDung=" + dienTichSuDung +
-                ", chiPhiThue=" + chiPhiThue +
+                ", dienTichSuDung=" + String.format("%.0f", dienTichSuDung) +
+                ", chiPhiThue=" + String.format("%.0f", chiPhiThue) +
                 ", soLuongNguoiToiDa=" + soLuongNguoiToiDa +
                 ", kieuThue='" + kieuThue + '\'' +
                 '}';
